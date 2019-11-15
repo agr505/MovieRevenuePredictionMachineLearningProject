@@ -11,7 +11,7 @@ loadRawXFromNumpy = 0
 loadTrainAndTestData = 1
 dataset_X_reimported = pd.read_csv('xgFeatures_156.csv')
 numpyUrl = 'ReducedRawData/pcaOutputScalingNum99Perc.npy'
-testAndTrainName = "pcaOutputScalingNum99Perc.npy"
+testAndTrainName = "xgFeatures_156.npy"
 
 #loadData#############################################
 #########################################################
@@ -60,7 +60,7 @@ else:
         xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=0.20)
 
 alpha=find_best_alpha(xtrain,ytrain)
-##print("Alpha: {}".format(alpha))
+print("Alpha: {}".format(alpha))
 reg = Ridge(alpha=alpha,normalize=True)
 reg.fit(xtrain,ytrain)
 ypred=reg.predict(xtest)

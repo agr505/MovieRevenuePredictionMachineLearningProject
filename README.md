@@ -7,16 +7,6 @@
 </p>
 
 # 1. Motivaton and overview of the project
-House price is highly concerned by people who are looking for places to live or opportunities to invest. Actually, housing expenses takes 30% of our daily expenses. It is easy to know the price of a house, but difficult to know whether the price is reasonable or not
-
-<p align="center">
-  <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Introduction.png" width="450"/>
-</p>
-
-In fact, many factors influence housing price, such as the area of the house, the number of bedrooms, the location et. al. Therefore, in this project, we will focus on the following three aspects related to house price, which is important to help us make a good deal:  
-1. Select the features that have impact on house price with recursive feature selection (RFE) and Random Forest
-2. Build house price prediction model using linear regression and neural network with different house features. 
-3. House recommendation based on consumers’ preference with k-neareat neighbor method (K-NN)
 
 ---
 # 2. Dataset and visulization 
@@ -25,25 +15,6 @@ In fact, many factors influence housing price, such as the area of the house, th
 #### Features in the dataset: 21 features in total
 1. id: notation for a house  
 2. date: date house was sold  
-3. price: the sell price of the house, which is what we need to predict
-4. bedrooms: Number of Bedrooms/House
-5. bathrooms: Number of bathrooms/House  
-6. sqft_living: square footage of the home  
-7. sqft_lot: square footage of the lot  
-8. floorsTotal: floors (levels) in house  
-9. waterfront: House which has a view to a waterfront  
-10. view: how many time it has been viewd consumers?  
-11. condition: How good the condition is (Overall)  
-12. grade: overall grade given to the housing unit, based on King County grading system  
-13. sqft_above: square footage of house apart from basement  
-14. sqft_basements: quare footage of the basement  
-15. yr_built: Built Year  
-16. yr_renovated: Year when house was renovated  
-17. zipcode: zip  
-18. lat: Latitude coordinate  
-19. long: Longitude coordinate  
-20. sqft_living15: Living room area in 2015 This might or might not have affected the lotsize area  
-21. sqft_lot15: lot size area in 2015  
 
 ### (2). dataset visulization
 #### Feature distribution
@@ -55,31 +26,6 @@ In fact, many factors influence housing price, such as the area of the house, th
   <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Feature_Dist.PNG">
 </p>
 
-#### Correlation Heat Map
-
-To find out how each feature is correlated to our target variable "price", the Pearson correation matrix is drawn below as a heat map. 
-
-<p align="center">
-  <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/HeatMap_ALL.PNG" width="500"/>
-</p>
-
-The features with correlation coefficients close to +1 or -1 with price may have higher impact on house price. Those with correlation efficients close to 0 may be irrelevent to house price. Besides, if two features have high correlation, one of them may be redundant. 
-
-The correlation matrix with features that is highly correlated with "price" is drawn below
-
-<p align="center">
-  <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/HeatMap_select.PNG" width="500"/>
-</p>
-
-From the above results, the features that are high correlated with house price are: bathrooms, bedrooms, floors, grade, sqft_above, sqft_living and sqft_living15.
-
-#### pairplots
-A pairplots is drawn to visualize the relationship between different features. The pairplots shows how "bathrooms", "bedrooms" and "sqft_living" are distributed vis-a-vis the price as well as the "grade", which means the grading of the houses by the local real estate agency. The pairplots shows that some features are either linearly or quadraticlly correlated with "price", which indicates that a linear or polynomial regression model can be helpful for house price prediction.  
-
-<p align="center">
-  <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/Feature_Plot.png">
-</p>
-
 ---
 # 3. Data pre-processing
 After the dataset is visulized and examined, the data is processed in following ways: 
@@ -89,41 +35,71 @@ After the dataset is visulized and examined, the data is processed in following 
 4. There is a categorical feature: yr_renovated. It is either 0 or the year that it has been renovated. It is treat as a dummy variable with only two values: "1" if the house has been renovated and "0" if it has not. 
 
 ---
-# 4. Feature selection 
+# 4. Feature Reduction
 
-In this section, two feature selection methods to find the features that highly influences the house price: the recursive feature elimination (RFE) and random forest based feature selection. The RFE method start with a complete set of features and it reursively remove one feature to evaluate the importance of this feature. It stops until the number of desired features is obtained.  
+To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required, especially when there are 10955 vs only 3377 data points. To achieve this, PCA and feature selection were pursued.
+ 
+### (1). PCA
+ 
+PCA was done in two ways:
+1. (PCA20) No scaling of the data, and picking 20 components
+2. (PCA99%) Z-Score normalization of features, and then get the number of components required to recover 99% of the variance. To achieve normalization, remove the mean and scale to unit variance. The standard score of a sample x is calculated as: z = (x - u) / s.
 
-From the results of RFE below, some categorical features such as grade (evaluated from local real estate agency) and condition are ranked high. Besides, the number of bedroom, bathrooms ranks higher than the area of the bedroom, bathrooms. 
-
+#### PCA20 DETAILS
+Recovered Variance: 99.99999999999851
+Original # features: 10955
+Reduced # features: 20
+Recovered Variance Plot for PCA99%
+Note: Huge first principal component probably because one of the variables is budget, which is much bigger than all other features
 <p align="center">
-  <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/FeatureImp_RFE.PNG" width="400"/>
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/20CompPCAGraph.png" width="400"/>
 </p>
 
-In random forest model, similar as RFE, the categorical features such as grade are ranked high. However, different from RFE, the area of the rooms are more import from random forest model. 
-
+#### PCA99% DETAILS
+Recovered Variance:  99.00022645866223
+Original # features: 10955
+Reduced # features: 2965
+Recovered Variance Plot for PCA99%
 <p align="center">
-  <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/FeatureImp_RF.PNG" width="400"/>
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/99PercRecovVarPCAGraph.png" width="400"/>
 </p>
 
-To get a more balanced feature ranking, we normalized the scores from each model and get the mean values, the final feature ranking is shown as below:
+### (2). Feature selection 
 
+# 5. Movie Revenue Prediction with linear ridge regression
+
+Ridge regression was performed
+
+### (1). PCA No scaling, 20 components
+RMSE: 160266397.7589437
+R2 score 0.49805732362034183
+
+### (2). PCA Scaling,99% variance recovery:
+RMSE: 225957444.3019453
+R2 score 0.00224829444458019
+
+### (3). Feature Selection:
+RMSE: 126001088.6944168
+R2 score 0.6897457309459162
+
+Comparing RMSE and R2 of Ridge Regression on Three Input Data
 <p align="center">
-  <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/FeatureImp_Average.PNG" width="400"/>
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/RidgeRegressionRMSE.PNG" width="400"/>
+</p>
+<p align="center">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/RidgeRegressionR%5E2.PNG" width="400"/>
 </p>
 
-Therefore, it can be concluded that the features has high impact on house price are: grade, the number of bedrooms and bathrooms, and whether the house has been renovated. 
+Plot below is the predicted vs actual revenue predicted from Ridge Regression with Feature Selection data as input. Alpha was determined through kfold method and was 0.5 for feature selection.
+<p align="center">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtest_xgbFeatures.png" width="400"/>
+</p>
 
-# 5. Housing price prediction with linear regression
+Closeup
+<p align="center">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtestCloseup_xgbFeatures.png" width="400"/>
+</p>
 
-<img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/Price_Bathrooms.PNG" width="280"/> <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/Price_Bedrooms.PNG" width="280"/><img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/Price_SqLiving.PNG" width="280"/>
-
-As what we have shown in the dataset analysis, some features shows a classical linear relationship, while others show a quanratic relation with house price. In this section, both the linear and polynomial regression model are impelemented for house price prediction. 
-
-After data pre-processing as we mentioned above, there are 14 features left in the dataset. An the dataset is divided into training and testing set. With linear regression, when the number of features is too low, it could suffer from under-fitting, and get poor performance in both training and testing, while if there are too many features, over-fitting may likely to happen. To learn about the number of features in the linear regression, we have run linear and polynomial regression, based on three models (linear regression, ridge regression and lasso regression), with all the 14 features and only top-10 important features. 
-
-In ridge regression, it shrinks the coefficients (w) by putting L2 norm on them and therefore, helps to reduce the model complexity and multi-collinearity. Similarly, in lasso regression, the regularization will lead to zero coefficients, which means some of the features are completely neglected for the evaluation of output. 
-
-### (1). ALL Features Included
 
 As the figure shown below, where red line is the real price value, and the blue dots are the predicted price value. The first row shows the linear, lasso and ridge regression without polynomial, the second row shows when polynomial in introduced with degree equals to 2, and the third is with degree equals to 3. It shows that, with polynomial, the prediction achieves better performance, since it can help to fit in non-linear features.
 
