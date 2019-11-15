@@ -1,9 +1,9 @@
-# Project title: House Price Analysis and Prediction with Machine Learning Methods
-## Team members: Yandong Luo, Xiaochen Peng, Hongwu Jiang and Panni Wang
+# Project title: Movie Revenue Prediction
+## Team members: Sanmesh, Aaron, Tarushree, Aastha, Prithvi
 
 ---
 <p align="center">
-  <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Housing_expenses.png"> 
+  <img src="https://storage.googleapis.com/kaggle-datasets-images/138/287/229bfb5d3dd1a49cc5ac899c45ca2213/dataset-cover.png"> 
 </p>
 
 # 1. Overview of the project and Motivation 
@@ -43,7 +43,7 @@ We aim to find the variables most associated with film revenue, and to see how t
 24. vote_average
 25. vote_count  
 
-### (2). (Optional) dataset visualization
+### (2). Dataset visualization
 #### Feature distribution
 
 
@@ -93,13 +93,19 @@ Recovered Variance Plot Below for PCA_Scale_99%VarRecov
 ### (2). Feature selection (Prithvi)
 
 #### Using XGBRegressor
-Feature importances of encoded movie data
+
+We used XGBRegressor to check out the correlation of various features to the revenue. 
+Once we visualized the graphs we then manually set a threshold and gathered 150 features for testing our models on.
+
+#### Graphs
+
+##### Feature importances of encoded movie data
 
 <p align="center">
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/FeatureImportance.png" width="400"/>
 </p>
 
-Top 20 Revenue predictors
+##### Top 20 Revenue predictors
 
 <p align="center">
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/RevenuePredictors20.png" width="400"/>
@@ -162,76 +168,17 @@ What is interesting is that the PCA data with the normalization performed worse 
 
 # 6. Classification Models ()
 
-<p align="center">
-  <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/MLP.png" width="300"/>
-</p>
 
-## neural network vs linear regression
-A 2-layer neural network with fully connected layer is implemented for house price prediction. The hidden layer unit is 64, the activation function at the hidden layer is ReLU and the output is the house price. The prediction is evaluated with root-mean-squred-error (RMSE) of the predicted house price. The neural network is trained with 20 epoch.  
-First, the RMSE obtained by neural network method is compared with that of linear regression, as shown in the figure below. Neural network shows lower loss than all the linear regression based methods, which indicates that it can be a good model for house price prediction.
+### Binning of Y values 
 
-<p align="center">
-  <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/MRSE_ANN.png" width="400"/>
-</p>
+### SVM 
 
-## prediction loss vs. number of hidden units
-Then we examined the prediction loss with different neural network settings. The prediction loss of the neural network can be decreased by increasing the number of hidden units, as shown in the figure below. It means that a more complicated model is desired for this task
+### Random Forest
 
-<p align="center">
-  <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Loss_vs_hidden_units.png" width="400"/>
-</p>
 
-## prediction loss vs. activation function
-Three different activation functions are examined ReLU, Sigmoid and Tanh. The results shows that prediction loss is small when "ReLU" is used while the prediction loss is large when the activation is Sigmoid or Tanh. The prediction loss vs. training epoch is plotted. The neural networks with Sigmoid and Tanh shows slow training as the neuron activation value is limited, which is (0,1) for Sigmoid and (-1,1) for Tanh
+# 7. Final Conclusions
+ 
 
-<p align="center">
-  <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/MRSE_ANN_activations.png" width="300"/> <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Loss_vs_activation_type" width="300"/>
-</p>
+# 8. Reference
 
-## Prediction loss vs. optimizers
-The prediction loss of neural network trained with different optimization method are also examined with SGD and RMSprop. RMSprop shows faster convergence and less fluctuations when it is convergent because the learning rate can be varied during the training. 
-
-<p align="center">
-  <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Loss_vs_optimizer.png" width="400"/>
-</p>
-  
-# 7. Housing recommendation with K-NN
-The house recommendation is conducted with k-neareast neighbor algorithm to find the house that best matches the consumer's preference, which is measured by the Euclidean distance between the house in the dataset and the preference input by consumer. An example is shown in the table below, where 5 recommendations are made. It is noted that house price is an important factor as recommendations are trying to match the price expected by consumers. As consumers are price sensitive, it indicates the K-NN works well for house recommendation. 
-
-<p align="center">
-  <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Recommendation.JPG">
-<p/>
-
-# 8. Discussions (the questions in proposal) 
-a. Do all the feature ranking methods list the same informative features? And do those features ranked in the same order?  
-Answer: No, there are slight difference. In both recursive feature elimination (RFE), the number of rooms has higher importance while in random forest feature ranking, the area of the rooms has higher importance. However, categorical features such as grade (the grad evaluated by agency) are ranked high by both method
-
-b. With the same set of features, which regression model provides the most accurate prediction.  
-Answer: Lasso and Ridge regression with polynomial features (degree = 2) provides the most accurate prediction results as it prevents overfitting. 
-
-c. How to choose the proper methods for prediction  
-Answer: in this project, neural network shows the smallest rmse loss for prediction. The factors that influence the prediction accuracy are the number of hidden units, activation functions. For house price prediction, hidden units of larger than 64 is preferred and ReLU activation provides faster training and better accuracy
-
-d. Why not use PCA for feature selection  
-Answer: Fisrt, PCA is trying to find the feature or dimension with the highest variance. However, in this project, what we would like to find are the features with the highest impact on house price. Features with high variance may not necessarily have high impact on house price. Besides, PCA may create new features on a new dimension, which is not intepretable.  
-
-# 9. Conclusion
-a. Obtained features that influence house price the most  
-> Obtained the features that has the highest impact on house price with two feature selection methods: recursive feature elimination (RFE) and random forest.  
-> It can be concluded that categorical featuress such as the grade of the house has high impact on house price.  
-> Besides, different feature selection method can leads to different results. E.g. for RFE, the number of rooms have the highest impact on house price while the room area is important for house price from random forest based feature selection.  
-
-b. Build the house prediction model
-> Both linear regression and neural network are implemented.  
-> Neural network provides better prediction.  
-> More hidden units and use 'ReLU' as activation can help improve the prediction  
-
-c. House recommendation by K-NN  
-> Recommend house based on consumer's needs  
-> Price is an important feature to match  
-
-# 10. Reference
-[1]Park, B. and J. K. Bae (2015). "Using machine learning algorithms for housing price prediction: The case of Fairfax County, Virginia housing data." Expert Systems with Applications 42(6): 2928-2934.  
-[2]Gür Ali, Ö. et. al (2013). "Selecting rows and columns for training support vector regression models with large retail datasets." European Journal of Operational Research 226(3): 471-480.  
-[3]Breiman, L. (2001). "Random Forests." Machine Learning 45(1): 5-32.
 
