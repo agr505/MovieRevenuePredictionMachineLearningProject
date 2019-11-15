@@ -6,21 +6,58 @@
   <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Housing_expenses.png"> 
 </p>
 
-# 1. Overview of the project and Motivation (Not Assigned)
+# 1. Overview of the project and Motivation 
+### Motivation: 
+To predict the Box office revenue of a movie based on it's characteristics. 
+Our analysis will allow Directors/Producers to decide on what characteristics of the movie will affect their box office revenue, and what to modify in their selection of actors or investment in the movies to maximize their profit. Such analysis will also allow other interested third parties to predict the success of a film before it is released. 
+We aim to find the variables most associated with film revenue, and to see how the various revenue prediction models are affected by them.
 
 ---
 # 2. Dataset and visualization 
 
-### (1). Dataset: House Sales in King County (from Kaggle) (Not Assigned)
-#### Features in the dataset: 21 features in total
-1. id: notation for a house  
-2. date: date house was sold  
+### (1). Dataset: The Movies DataBase (TMDB) 5000 Movie Dataset (from Kaggle)
+#### Features in the dataset: 24 features in total &nbsp;&nbsp;&nbsp; (MAKE TABLE) 
+1. ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2. movie_id
+3. title
+4. cast
+5. crew
+6. budget
+7. genres
+8. homepage
+9. id
+10. keywords
+11. original_language
+12. original_title
+13. overview
+14. popularity
+15. production_companies
+16. production_countries
+17. release_date
+18. revenue
+19. runtime
+20. spoken_languages
+21. status
+22. tagline
+23. title
+24. vote_average
+25. vote_count  
 
-### (2). (Optional) dataset visualization (Not Assigned)
+### (2). (Optional) dataset visualization
 #### Feature distribution
 
+
+
 ---
-# 3. Data pre-processing (Not Assigned)
+# 3. Data pre-processing
+#### Steps followed for Data cleaning & Data pre-processing:
+- Removal of data points with missing revenues
+- Removing zero REVENUES from the data 
+- Adjusting revenue for inflation.
+- Separation of year into Year and day of the year, since we theorized that film revenue will be highly correlated with which season the movie is released in.
+- Encoding categorical features: conversion of data into binary format.
+  - Different classes in a column (Lists) allotted their own column, and each row will indicate if column existed or not by assigning either a 1 or a 0. 
+- Data was then divided into Test Validation and Training sets (60%, 20% and 20%) for further model training and testing.
 
 
 ---
