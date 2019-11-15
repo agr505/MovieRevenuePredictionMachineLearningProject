@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 #INPUTS#############################################
 #########################################################
 generateNewTrainTestIndices = 0
-loadFromNumpy = 0 #set to 1 if want to load numpy from variable numpyUrl
+loadFromNumpy = 1 #set to 1 if want to load numpy from variable numpyUrl
 #otherwise, set 1 to load data from dataset_X_reimported url
 dataset_X_reimported = pd.read_csv('xgFeatures_156.csv')
-numpyUrl = 'ReducedRawData/pcaOutputScalingNum20.npy'
+numpyUrl = 'ReducedRawData/pcaOutputNoScaleNum20.npy'
 percentageOfTest = 0.2
 
 #loadData#############################################
@@ -26,7 +26,6 @@ from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 
-dataset_X_reimported = pd.read_csv('xgFeatures_156.csv')
 dataset_y_reimported = pd.read_csv('Encoded_y_revenue.csv') #or - rating.csv
 dataset_X_reimported.rename(columns={'5':'Film runtime',
                                      '0':'Film budget',
@@ -53,19 +52,19 @@ def find_best_alpha(X,y):
 #########################################################
 numDataPoints = X.shape[0]
 if generateNewTrainTestIndices == 1:
-        numOFTrain = int(0.2*numDataPoints)
+        numOFTest = int(0.2*numDataPoints)
         buf1 = np.arange(X.shape[0])
         np.random.shuffle(buf1)
-        trainIndices = buf1[:numOFTrain]
-        testIndices = buf1[numOFTrain:]
+        testIndices = buf1[:numOFTest]
+        trainIndices = buf1[numOFTest:]
+        np.save("trainIndices.npy", trainIndices)
+        np.save("testIndices.npy", testIndices)
 else:
         trainIndices = np.load("trainIndices.npy")
         testIndices = np.load("testIndices.npy")
-np.save("trainIndices.npy", trainIndices)
-np.save("testIndices.npy", testIndices)
 ###saveTrainTestData#############################################
 ###########################################################
-####xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=percentageOfTest)
+##xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=percentageOfTest)
 xtrain = X[trainIndices,:]
 xtest = X[testIndices,:]
 ytrain = y[trainIndices]

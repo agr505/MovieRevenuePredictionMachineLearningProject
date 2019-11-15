@@ -7,10 +7,11 @@ import matplotlib.pyplot as plt
 
 #INPUTS#############################################
 #########################################################
-loadRawXFromNumpy = 1
+loadRawXFromNumpy = 0
 loadTrainAndTestData = 1
 dataset_X_reimported = pd.read_csv('xgFeatures_156.csv')
-numpyUrl = 'ReducedData/pcaOutputScalingNum99Perc.npy'
+numpyUrl = 'ReducedRawData/pcaOutputScalingNum99Perc.npy'
+testAndTrainName = "pcaOutputScalingNum99Perc.npy"
 
 #loadData#############################################
 #########################################################
@@ -50,10 +51,11 @@ def find_best_alpha(X,y):
 #Calculate Alpha#############################################
 #########################################################
 if loadTrainAndTestData == 1:
-        xtrain = np.load("ReducedData/xtrain_xgFeatures_156.npy")
-        xtest = np.load("ReducedData/xtest_xgFeatures_156.npy")
-        ytrain = np.load("ReducedData/ytrain_xgFeatures_156.npy")
-        ytest = np.load("ReducedData/ytest_xgFeatures_156.npy")
+        print("TrainAndTestData/xtrain_" + testAndTrainName)
+        xtrain = np.load("TrainAndTestData/xtrain_" + testAndTrainName)
+        xtest = np.load("TrainAndTestData/xtest_" + testAndTrainName)
+        ytrain = np.load("TrainAndTestData/ytrain_" + testAndTrainName)
+        ytest = np.load("TrainAndTestData/ytest_" + testAndTrainName)
 else:
         xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=0.20)
 
