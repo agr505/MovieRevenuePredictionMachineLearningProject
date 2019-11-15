@@ -26,29 +26,29 @@
 ---
 # 4. Feature Reduction 
 
-To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required, especially when there are 10955 vs only 3377 data points. To achieve this, PCA and feature selection were pursued.
+Our data has 10955 features, which is huge, especially in relation to the 3377 data points. To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required. To achieve this, PCA and feature selection were pursued.
  
 ### (1). PCA (Sanmesh)
  
 PCA was done in two ways:
-1. (PCA20) No scaling of the data, and picking 20 components
-2. (PCA99%) Z-Score normalization of features, and then get the number of components required to recover 99% of the variance. To achieve normalization, remove the mean and scale to unit variance. The standard score of a sample x is calculated as: z = (x - u) / s.
+1. (PCA_noScale_20Comp) Data wasn't scaled, and number of principal components selected = 20
+2. (PCA_Scale_0.995VarRecov) Z-Score normalization was done on the features, and number of principal components = # to recover 99% of the variance. To achieve normalization, remove the mean of the feature and scale to unit variance. The Z-Score of a sample x is calculated as: z = (x - u) / s.
 
-#### PCA20 DETAILS
-Recovered Variance: 99.99999999999851
-Original # features: 10955
-Reduced # features: 20
-Recovered Variance Plot for PCA99%
-Note: Huge first principal component probably because one of the variables is budget, which is much bigger than all other features
+#### PCA_noScale_20Comp DETAILS
+Recovered Variance: 99.99999999999851  
+Original # features: 10955  
+Reduced # features: 20  
+Recovered Variance Plot Below for PCA_noScale_20Comp%    
+Note: Huge first principal component is probably due to othe feature of budget, which is much bigger than all other features (average = 40,137,051.54)  
 <p align="center">
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/20CompPCAGraph.png" width="400"/>
 </p>
 
-#### PCA99% DETAILS
-Recovered Variance:  99.00022645866223
-Original # features: 10955
-Reduced # features: 2965
-Recovered Variance Plot for PCA99%
+#### PCA_Scale_99%VarRecov DETAILS
+Recovered Variance:  99.00022645866223  
+Original # features: 10955  
+Reduced # features: 2965  
+Recovered Variance Plot Below for PCA_Scale_99%VarRecov  
 <p align="center">
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/99PercRecovVarPCAGraph.png" width="400"/>
 </p>
@@ -71,19 +71,21 @@ Top 20 Revenue predictors
 
 # 5. Movie Revenue Prediction with linear ridge regression (Sanmesh)
 
-Ridge regression was performed
+First, we tried to predict the exact revenue of the test set of movies using linear ridge regression. Ridge regression was chosen because it would it would protect against overfitting of the data, especially when there are a huge number of features. 
+Cross validation was performed to find the optimal alpha or regularization value.
+The data sets were the two PCA data sets, and the feature selection dataset mentioned previously. Ridge Regression was trained on 80% of each data set, and then finally tested on the remaining 20% of the data sets.  The results are below.
 
 ### (1). PCA No scaling, 20 components
-RMSE: 160266397.7589437
-R2 score 0.49805732362034183
+RMSE: 160266397.7589437  
+R2 score 0.49805732362034183  
 
 ### (2). PCA Scaling,99% variance recovery:
-RMSE: 225957444.3019453
-R2 score 0.00224829444458019
+RMSE: 225957444.3019453  
+R2 score 0.00224829444458019  
 
 ### (3). Feature Selection:
-RMSE: 126001088.6944168
-R2 score 0.6897457309459162
+RMSE: 126001088.6944168  
+R2 score 0.6897457309459162  
 
 Comparing RMSE and R2 of Ridge Regression on Three Input Data
 <p align="center">
@@ -93,26 +95,33 @@ Comparing RMSE and R2 of Ridge Regression on Three Input Data
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/RidgeRegressionR%5E2.PNG" width="600"/>
 </p>
 
-Plot below is the predicted vs actual revenue predicted from Ridge Regression with Feature Selection data as input. Alpha was determined through kfold method and was 0.5 for feature selection.
+The plots below are the predicted vs actual revenue predicted from Ridge Regression. The data was sorted by the actual y values in order to make it easier to view the results. Alpha was determined through kfold method and was 0.5 for feature selection.  
+
+Revenue Prediction with PCA_noScale_20Comp data as input
+<p align="center">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtest_PCA20Comp.png" width="600"/>
+</p>
+  
+Revenue Prediction with PCA_Scale_99%VarRecov data as input
+<p align="center">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtest_PCA99PercVarRecov.png" width="600"/>
+</p>  
+  
+Revenue Prediction with Feature Selection data as input
 <p align="center">
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtest_xgbFeatures.png" width="600"/>
 </p>
 
-Closeup
+Closeup of Revenue Prediction with Feature Selection data as input
 <p align="center">
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtestCloseup_xgbFeatures.png" width="600"/>
 </p>
 
-
 ### (3). Results (Sanmesh)
 
-It is shown that Lasso and Ridge regression shows lower RMSE, which indicates more accurate prediction due to less over-fitting. Besides, polynomial regression with 2nd order features shows the lower RMSE loss.  
-
-<p align="center">
-  <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/RMSE.PNG" width="400"/>
-</p>
-
-Selecting all the features for regression shows slightly lower RMSE than select 10 features. It can be explained that the number of features in this dataset is small (21 in total) and therefore there is no over-fitting by using all the features. 
+Overall, we got the best Ridge regression R^2 score and the lowest RMSE error when using doing feature selection on the input.  
+Our target R^2 value to indicate a good model is 0.6 to 0.9, according to this literature (https://towardsdatascience.com/what-makes-a-successful-film-predicting-a-films-revenue-and-user-rating-with-machine-learning-e2d1b42365e7), and this is acheived through the feature selection data input with ridge regression. Thus we deam this model as a success.  
+What is interesting is that the PCA data with the normalization performed worse than the PCA without scaling. This may be because PCA without normalization of the data captures the budget mainly in the first principal component. We see from our correlation graphs and other literature (https://towardsdatascience.com/what-makes-a-successful-film-predicting-a-films-revenue-and-user-rating-with-machine-learning-e2d1b42365e7) that budget is one of the leading indicators to predicting movie revenue, so it makes sense that when using PCA data without normalization, it will perform better than pca with normalization. 
 
 # 6. Classification Models ()
 
