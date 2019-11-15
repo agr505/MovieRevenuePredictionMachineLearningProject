@@ -165,7 +165,7 @@ Closeup of Revenue Prediction with Feature Selection data as input
 The ranking of the input data that gave the highest R^2 scores and lowest RMSE values from best to worst are:
 1. Feature Selection 
 2. PCA No scaling, 20 components  
-3. PCA Scaling,99% variance recovery
+3. PCA Scaling, 99% variance recovery
 
 Feature Selection gave us the best performance for ridge regression. Our target R^2 value to indicate a good model is 0.6 to 0.9, according to this literature (https://towardsdatascience.com/what-makes-a-successful-film-predicting-a-films-revenue-and-user-rating-with-machine-learning-e2d1b42365e7), and this is acheived only through the feature selection data input with ridge regression. Thus we deam ridge regression model with feature selection input as a success in predicting movie revenue.
 
