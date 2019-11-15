@@ -51,7 +51,7 @@ def find_best_alpha(X,y):
 #Calculate Alpha#############################################
 #########################################################
 if loadTrainAndTestData == 1:
-        print("TrainAndTestData/xtrain_" + testAndTrainName)
+##        print("TrainAndTestData/xtrain_" + testAndTrainName)
         xtrain = np.load("TrainAndTestData/xtrain_" + testAndTrainName)
         xtest = np.load("TrainAndTestData/xtest_" + testAndTrainName)
         ytrain = np.load("TrainAndTestData/ytrain_" + testAndTrainName)
@@ -60,19 +60,45 @@ else:
         xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=0.20)
 
 alpha=find_best_alpha(xtrain,ytrain)
-print("Alpha: {}".format(alpha))
+##print("Alpha: {}".format(alpha))
 reg = Ridge(alpha=alpha,normalize=True)
 reg.fit(xtrain,ytrain)
 ypred=reg.predict(xtest)
-print("***")
-print(ypred[0])
-print(ytest[0])
-print(ytest[0]-ypred[0])
-print("***")
 #rmse=mean_squared_error(ytest, ypred)
 rmse=rmse(ypred,ytest)
-np.savetxt('ypredRidgeRegWithPCA.csv', ypred, delimiter=',')
-np.savetxt('ytestRidgeRegWithPCA.csv', ytest, delimiter=',')
+##np.savetxt('ypredRidgeRegWithPCA.csv', ypred, delimiter=',')
+##np.savetxt('ytestRidgeRegWithPCA.csv', ytest, delimiter=',')
 print("RMSE: {}".format(rmse))
 print("R2 score" ,r2_score(ytest, ypred))
 
+import matplotlib.pyplot as plt
+x = range(ytest.size)
+fig = plt.figure()
+ax1 = fig.add_subplot(111)
+
+ax1.scatter(x, ytest, s=10, c='b', marker="s", label='test')
+ax1.scatter(x,ypred, s=10, c='r', marker="o", label='predicted')
+##plt.plot((ytest+ypred)/2)
+plt.errorbar(x, (ytest+ypred)/2, yerr=np.abs(ytest-ypred)/2, xlolims=True, label='error bar', fmt = ',')
+plt.legend(loc='upper right');
+
+##############plot 2
+sortedIndices = np.argsort(ytest)
+##print(sortedIndices)
+ytestSorted = ytest[sortedIndices]
+ypredSorted = ypred[sortedIndices]
+
+fig2 = plt.figure()
+ax2 = fig2.add_subplot(111)
+
+ax2.scatter(x, ytestSorted, s=10, c='b', marker="s", label='Test Actual Revenue')
+ax2.scatter(x,ypredSorted, s=10, c='r', marker="o", label='Predicted Revenue')
+##plt.plot((ytest+ypred)/2)
+plt.errorbar(x, (ytestSorted+ypredSorted)/2, yerr=np.abs(ytestSorted-ypredSorted)/2, xlolims=True, label='error bar', fmt = ',')
+plt.legend(loc='upper left');
+plt.title("Test Actual vs Predicted Revenue, sorted by Actual Revenue")
+plt.xlabel("Particular x data point from PCA 99")
+plt.ylabel("Revenue")
+
+
+plt.show()

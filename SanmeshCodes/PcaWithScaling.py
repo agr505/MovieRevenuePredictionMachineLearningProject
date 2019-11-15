@@ -5,8 +5,8 @@ Created on Sun Aug 4 06:46:53 2019
 """
 ##################################################
 #Inputs###############
-numCompVar = 0.99
-doWeScale = 1
+numCompVar = 20
+doWeScale = 0
 #loadPcaData = 1
 
 ##################################################
@@ -62,9 +62,9 @@ print("Reduced features: ", numOfReducFeat)
 
 plt.style.use('ggplot')
 plt.bar(range(numOfReducFeat), pca.explained_variance_ratio_*100, color='green')
-plt.xlabel("Principle Component")
+plt.xlabel("Principle Components")
 plt.ylabel("Recovered Variance %")
-plt.title("Recovered Variance % of each principle component")
+plt.title("Variances for Num Components or Target Variance % = " + str(numCompVar))
 plt.show()
 
 
