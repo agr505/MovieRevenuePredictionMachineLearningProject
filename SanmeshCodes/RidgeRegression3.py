@@ -7,12 +7,12 @@ import matplotlib.pyplot as plt
 
 #INPUTS#############################################
 #########################################################
-loadRawXFromNumpy = 0
+loadRawXFromNumpy = 1
 loadTrainAndTestData = 1
 dataset_X_reimported = pd.read_csv('xgFeatures_156.csv')
 numpyUrl = 'ReducedRawData/pcaOutputScalingNum99Perc.npy'
-testAndTrainName = "xgFeatures_156.npy"
-
+##testAndTrainName = "pcaOutputScalingNum99Perc.npy"
+testAndTrainName = "pcaOutputNoScaleNum20.npy"
 #loadData#############################################
 #########################################################
 from sklearn import linear_model

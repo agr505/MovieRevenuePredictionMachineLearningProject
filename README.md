@@ -6,33 +6,22 @@
   <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Housing_expenses.png"> 
 </p>
 
-# 1. Motivaton and overview of the project
+# 1. Overview of the project and Motivation
 
 ---
-# 2. Dataset and visulization 
+# 2. Dataset and visualization 
 
 ### (1). Dataset: House Sales in King County (from Kaggle)
 #### Features in the dataset: 21 features in total
 1. id: notation for a house  
 2. date: date house was sold  
 
-### (2). dataset visulization
+### (2). (Optional) dataset visualization
 #### Feature distribution
-15 features are visulized as below. The features has the following characteristics: 
-1. The scale of each feature is quite different, which means normalization is needed
-2. There are continuos variables (sqrf_lot et.al), dicreste variables (bedrooms) and categorical variable (grade,yr_renovated)
-
-<p align="center">
-  <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Feature_Dist.PNG">
-</p>
 
 ---
 # 3. Data pre-processing
-After the dataset is visulized and examined, the data is processed in following ways: 
-1. remove irrelevant features: id, date, lat, long, zipcode
-2. remove the feature "waterfront" as it is 0 for all the data points
-3. normalize the all the features with its mean and sigma as their scale is quite different
-4. There is a categorical feature: yr_renovated. It is either 0 or the year that it has been renovated. It is treat as a dummy variable with only two values: "1" if the house has been renovated and "0" if it has not. 
+
 
 ---
 # 4. Feature Reduction
