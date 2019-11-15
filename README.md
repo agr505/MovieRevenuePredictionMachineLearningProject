@@ -76,7 +76,7 @@ Feature importances of encoded movie data
 Top 20 Revenue predictors
 
 <p align="center">
-  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/RevenuePredictors20" width="400"/>
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/RevenuePredictors20.png" width="400"/>
 </p>
 
 
