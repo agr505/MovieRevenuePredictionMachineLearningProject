@@ -6,29 +6,29 @@
   <img src="https://github.com/yandongluo/HousingPricePrediction/blob/master/Figures/Housing_expenses.png"> 
 </p>
 
-# 1. Overview of the project and Motivation
+# 1. Overview of the project and Motivation (Not Assigned)
 
 ---
 # 2. Dataset and visualization 
 
-### (1). Dataset: House Sales in King County (from Kaggle)
+### (1). Dataset: House Sales in King County (from Kaggle) (Not Assigned)
 #### Features in the dataset: 21 features in total
 1. id: notation for a house  
 2. date: date house was sold  
 
-### (2). (Optional) dataset visualization
+### (2). (Optional) dataset visualization (Not Assigned)
 #### Feature distribution
 
 ---
-# 3. Data pre-processing
+# 3. Data pre-processing (Not Assigned)
 
 
 ---
-# 4. Feature Reduction
+# 4. Feature Reduction 
 
 To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required, especially when there are 10955 vs only 3377 data points. To achieve this, PCA and feature selection were pursued.
  
-### (1). PCA
+### (1). PCA (Sanmesh)
  
 PCA was done in two ways:
 1. (PCA20) No scaling of the data, and picking 20 components
@@ -53,7 +53,7 @@ Recovered Variance Plot for PCA99%
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/99PercRecovVarPCAGraph.png" width="400"/>
 </p>
 
-### (2). Feature selection 
+### (2). Feature selection (Prithvi)
 
 #### Using XGBRegressor
 Feature importances of encoded movie data
@@ -69,7 +69,7 @@ Top 20 Revenue predictors
 </p>
 
 
-# 5. Movie Revenue Prediction with linear ridge regression
+# 5. Movie Revenue Prediction with linear ridge regression (Sanmesh)
 
 Ridge regression was performed
 
@@ -104,21 +104,7 @@ Closeup
 </p>
 
 
-As the figure shown below, where red line is the real price value, and the blue dots are the predicted price value. The first row shows the linear, lasso and ridge regression without polynomial, the second row shows when polynomial in introduced with degree equals to 2, and the third is with degree equals to 3. It shows that, with polynomial, the prediction achieves better performance, since it can help to fit in non-linear features.
-
-<p align="center">
-  <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/Predict_All.PNG">
-</p>
-
-### (2). Selected Top-10 Features Included
-
-<p align="center">
-  <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/Predict.PNG">
-</p>
-
-The figure shown above is the relation between real price and predicted price, when we only introduced the top-10 important features. The first column shows the linear, ridge and lasso regression, and the second column shows the ones with polynomial (degree is set to 2). Similarly as what we have found in the "all features included" method, the linear regression achieves best performance among all the three linear models.
-
-### (3). Comparison and Discussion
+### (3). Results (Sanmesh)
 
 It is shown that Lasso and Ridge regression shows lower RMSE, which indicates more accurate prediction due to less over-fitting. Besides, polynomial regression with 2nd order features shows the lower RMSE loss.  
 
@@ -128,7 +114,7 @@ It is shown that Lasso and Ridge regression shows lower RMSE, which indicates mo
 
 Selecting all the features for regression shows slightly lower RMSE than select 10 features. It can be explained that the number of features in this dataset is small (21 in total) and therefore there is no over-fitting by using all the features. 
 
-# 6. Housing price prediction with neural netwok
+# 6. Classification Models ()
 
 <p align="center">
   <img src="https://github.com/xiaochen76/CX4240-Project-House-Price-Predict/blob/master/Figures/MLP.png" width="300"/>
