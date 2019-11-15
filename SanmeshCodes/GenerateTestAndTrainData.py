@@ -7,10 +7,11 @@ import matplotlib.pyplot as plt
 
 #INPUTS#############################################
 #########################################################
+generateNewTrainTestIndices = 0
 loadFromNumpy = 0 #set to 1 if want to load numpy from variable numpyUrl
 #otherwise, set 1 to load data from dataset_X_reimported url
 dataset_X_reimported = pd.read_csv('xgFeatures_156.csv')
-numpyUrl = 'ReducedData/pcaOutputScalingNum99Perc.npy'
+numpyUrl = 'ReducedRawData/pcaOutputScalingNum20.npy'
 percentageOfTest = 0.2
 
 #loadData#############################################
@@ -48,12 +49,32 @@ def find_best_alpha(X,y):
 	best_alpha=ridgecv.alpha_
 	return best_alpha
 
-#loadData#############################################
+#generate train and test Indices or load them #############################################
 #########################################################
-xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=percentageOfTest)
+numDataPoints = X.shape[0]
+if generateNewTrainTestIndices == 1:
+        numOFTrain = int(0.2*numDataPoints)
+        buf1 = np.arange(X.shape[0])
+        np.random.shuffle(buf1)
+        trainIndices = buf1[:numOFTrain]
+        testIndices = buf1[numOFTrain:]
+else:
+        trainIndices = np.load("trainIndices.npy")
+        testIndices = np.load("testIndices.npy")
+np.save("trainIndices.npy", trainIndices)
+np.save("testIndices.npy", testIndices)
+###saveTrainTestData#############################################
+###########################################################
+####xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=percentageOfTest)
+xtrain = X[trainIndices,:]
+xtest = X[testIndices,:]
+ytrain = y[trainIndices]
+ytest = y[testIndices]
 np.save("xtrain.npy", xtrain)
 np.save("xtest.npy", xtest)
 np.save("ytrain.npy", ytrain)
 np.save("ytest.npy", ytest)
 print("train data Size = ",xtrain.shape)
-print("train data Size = ", xtest.shape)
+print("test data Size = ", xtest.shape)
+print(trainIndices)
+##
