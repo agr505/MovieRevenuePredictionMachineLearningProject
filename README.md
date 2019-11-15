@@ -66,6 +66,20 @@ Recovered Variance Plot for PCA99%
 
 ### (2). Feature selection 
 
+#### Using XGBRegressor
+Feature importances of encoded movie data
+
+<p align="center">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/FeatureImportance.png" width="400"/>
+</p>
+
+Top 20 Revenue predictors
+
+<p align="center">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/RevenuePredictors20" width="400"/>
+</p>
+
+
 # 5. Movie Revenue Prediction with linear ridge regression
 
 Ridge regression was performed
