@@ -84,10 +84,10 @@ R2 score 0.6897457309459162
 
 Comparing RMSE and R2 of Ridge Regression on Three Input Data
 <p align="center">
-  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/RidgeRegressionRMSE.PNG" width="400"/>
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/RidgeRegressionRMSE.PNG" width="600"/>
 </p>
 <p align="center">
-  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/RidgeRegressionR%5E2.PNG" width="400"/>
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/RidgeRegressionR%5E2.PNG" width="600"/>
 </p>
 
 Plot below is the predicted vs actual revenue predicted from Ridge Regression with Feature Selection data as input. Alpha was determined through kfold method and was 0.5 for feature selection.
