@@ -108,11 +108,22 @@ Once we visualized the graphs we then manually set a threshold and gathered 150 
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/FeatureImportance.png" width="400"/>
 </p>
 
-##### Top 20 Revenue predictors
+##### Feature importances of encoded movie data
+
+<p align="left">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/plots/xgb_2000.png" width="400"/>
+</p>
+
+<p align="right">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/plots/xgb_150_200.png" width="400"/>
+</p>
+
+##### Top 25 Revenue predictors
 
 <p align="center">
-  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/RevenuePredictors20.png" width="400"/>
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/plots/25_top_XGB.png" width="400"/>
 </p>
+
 
 
 # 5. Movie Revenue Prediction with linear ridge regression (Sanmesh)
