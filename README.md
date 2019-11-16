@@ -175,6 +175,22 @@ Closeup of Revenue Prediction with Feature Selection data as input
 
 ### (3). Results (Sanmesh)
 
+##### TABLES ( PLACEHOLDER DATA)
+
+##### Classification 
+| Models        | F1-score | Accuracy |
+|---------------|:--------:|---------:|
+| SVM           |     3    |        1 |
+| Random Forest |     2    |        1 |
+
+##### Regression
+| Models           | RMSE | R^2 |
+|------------------|:----:|----:|
+| Ridge Regression |   3  |   1 |
+
+#####  PLOTS & CHARTS
+
+
 The ranking of the input data that gave the highest R^2 scores and lowest RMSE values from best to worst are:
 1. Feature Selection 
 2. PCA No scaling, 20 components  
