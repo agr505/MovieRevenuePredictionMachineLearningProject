@@ -102,19 +102,18 @@ Once we visualized the graphs we then manually set a threshold and gathered 150 
 
 #### Graphs
 
-##### Feature importances of encoded movie data
 
-<p align="center">
-  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/FeatureImportance.png" width="400"/>
-</p>
 
 ##### Feature importances of encoded movie data
-
+######  2000 features sorted by feature importance scores of XGBRegressor
 <p align="left">
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/plots/xgb_2000.png" width="400"/>
 </p>
 
-<p align="right">
+###### 150 to 200 features feature importance scores of XGBRegressor
+
+To determine threshold for cutoff for feature selection
+<p align="left">
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/plots/xgb_150_200.png" width="400"/>
 </p>
 
