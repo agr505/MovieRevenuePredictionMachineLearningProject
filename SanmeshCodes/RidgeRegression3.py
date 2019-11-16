@@ -2,7 +2,9 @@
 #########################################################
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use("TKAgg")
+from matplotlib import pyplot as plt
 
 
 #INPUTS#############################################
@@ -41,8 +43,14 @@ else:
         X = dataset_reimported.iloc[:, 1:-2].values
 y = dataset_reimported.iloc[:, -1].values
 
-def rmse(pred, label): 
+def calc_rmse(pred, label): 
 	return np.sqrt(np.mean((pred-label)**2))
+
+def normalized_rmse(pred,label):
+    rmse=calc_rmse(pred,label)
+    norm_rmse=rmse/(np.max(label)-np.min(label))
+    return norm_rmse
+
 def find_best_alpha(X,y):
 	ridgecv = RidgeCV(alphas=[0.001, 0.1, 0.5, 1, 5, 10],normalize = True).fit(X, y)
 	best_alpha=ridgecv.alpha_
@@ -57,7 +65,7 @@ if loadTrainAndTestData == 1:
         ytrain = np.load("TrainAndTestData/ytrain_" + testAndTrainName)
         ytest = np.load("TrainAndTestData/ytest_" + testAndTrainName)
 else:
-        xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=0.20)
+        xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=0.20)#,shuffle=False)
 
 alpha=find_best_alpha(xtrain,ytrain)
 print("Alpha: {}".format(alpha))
@@ -65,13 +73,14 @@ reg = Ridge(alpha=alpha,normalize=True)
 reg.fit(xtrain,ytrain)
 ypred=reg.predict(xtest)
 #rmse=mean_squared_error(ytest, ypred)
-rmse=rmse(ypred,ytest)
+rmse=calc_rmse(ypred,ytest)
+norm_rmse=normalized_rmse(ypred,ytest)
 ##np.savetxt('ypredRidgeRegWithPCA.csv', ypred, delimiter=',')
 ##np.savetxt('ytestRidgeRegWithPCA.csv', ytest, delimiter=',')
 print("RMSE: {}".format(rmse))
+print("Normalized RMSE: {}".format(norm_rmse))
 print("R2 score" ,r2_score(ytest, ypred))
 
-import matplotlib.pyplot as plt
 x = range(ytest.size)
 fig = plt.figure()
 ax1 = fig.add_subplot(111)
