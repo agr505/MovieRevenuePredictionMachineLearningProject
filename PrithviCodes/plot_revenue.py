@@ -8,8 +8,7 @@ import matplotlib.pyplot as plt
 
 import pandas as pd
 
-from sklearn.datasets import make_classification
-from sklearn.ensemble import ExtraTreesClassifier
+
 
 dataset_y_reimported = pd.read_csv('Encoded_y - revenue.csv')
 
@@ -62,10 +61,23 @@ print(li)
 # print((np.unique(ynew)).size)
 
 
+plt.bar(range(len(li)), [val[1] for val in li], align='center')
+plt.xticks(range(len(li)), [100*val[0] for val in li])
+plt.xticks(rotation=70)
 
+#labels
+plt.title("Distribution of Revenue (in $ millions) VS count of movies")
+plt.ylabel('No. of movies')
+plt.xlabel('Revenue $ (Million)')
+plt.tight_layout()
+#plt.show()
+plt.savefig('RevenueVSCount.png')
 # plot
 
 
+
+#MY PLOT
+'''
 
 labels, ys = zip(*li)
 print("Labels :",labels)
@@ -85,5 +97,10 @@ index = np.arange(len(labels))
 #plt.xticks(index, labels, fontsize=5, rotation=30)
 ax.set_xticklabels(labels, rotation="45", ha="right")
 #plt.tight_layout()
-plt.show()
+#plt.show()
 plt.savefig('RevenueVSCount.png')
+'''
+
+
+
+

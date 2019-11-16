@@ -47,7 +47,7 @@ We aim to find the variables most associated with film revenue, and to see how t
 #### Feature distribution
 
 <p align="center">
-  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/RevenueVSCount.png" width="800"/>
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/RevenueVSCount.png" width="400"/>
 </p>
 
 
@@ -102,17 +102,27 @@ Once we visualized the graphs we then manually set a threshold and gathered 150 
 
 #### Graphs
 
+
+
 ##### Feature importances of encoded movie data
-
-<p align="center">
-  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/FeatureImportance.png" width="400"/>
+######  2000 features sorted by feature importance scores of XGBRegressor
+<p align="left">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/plots/xgb_2000.png" width="400"/>
 </p>
 
-##### Top 20 Revenue predictors
+###### 150 to 200 features feature importance scores of XGBRegressor
+
+To determine threshold for cutoff for feature selection
+<p align="left">
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/plots/xgb_150_200.png" width="400"/>
+</p>
+
+##### Top 25 Revenue predictors
 
 <p align="center">
-  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/RevenuePredictors20.png" width="400"/>
+  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/plots/25_top_XGB.png" width="400"/>
 </p>
+
 
 
 # 5. Movie Revenue Prediction with linear ridge regression (Sanmesh)
@@ -164,6 +174,26 @@ Closeup of Revenue Prediction with Feature Selection data as input
 </p>
 
 ### (3). Results (Sanmesh)
+
+##### TABLES ( PLACEHOLDER DATA)
+
+##### Classification 
+| Models        | F1-score | Accuracy |
+|---------------|:--------:|---------:|
+| SVM           |     3    |        1 |
+| Random Forest |     2    |        1 |
+
+##### Regression
+| Models           | RMSE | R^2 |
+|------------------|:----:|----:|
+| Ridge Regression |   3  |   1 |
+
+#####  PLOTS & CHARTS
+
+ToDo
+
+
+------------
 
 The ranking of the input data that gave the highest R^2 scores and lowest RMSE values from best to worst are:
 1. Feature Selection 
