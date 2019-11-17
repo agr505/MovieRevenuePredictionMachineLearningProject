@@ -16,11 +16,10 @@ We aim to find the variables most associated with film revenue, and to see how t
 # 2. Dataset and visualization 
 
 ### (1). Dataset: The Movies DataBase (TMDB) 5000 Movie Dataset (from Kaggle)
-#### Features in the dataset: 24 features in total &nbsp;&nbsp;&nbsp; (MAKE TABLE) 
-1. ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-2. movie_id
-3. title
-4. cast
+#### Features in the dataset: 24 features in total &nbsp;&nbsp;&nbsp;
+<!--
+1. ID    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. movie_id
+3. title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. cast
 5. crew
 6. budget
 7. genres
@@ -42,10 +41,53 @@ We aim to find the variables most associated with film revenue, and to see how t
 23. title
 24. vote_average
 25. vote_count  
+-->
+<table>
 
-### (2). Dataset visualization
-#### Feature distribution
+  <tr>
+    <td>ID</td>
+    <td>Title</td>
+    <td>crew</td>
+  </tr>
+  <tr>
+    <td>budget</td>
+    <td>genres</td>
+    <td>homepage</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>keywords</td>
+    <td>original_language</td>
+  </tr>
+  <tr>
+    <td>original_title/td>
+    <td>overview</td>
+    <td>popularity</td>
+  </tr>
+  <tr>
+    <td>production_companies</td>
+    <td>production_countries</td>
+    <td>release_date</td>
+  </tr>
+  <tr>
+    <td>revenue</td>
+    <td>runtime</td>
+    <td>spoken_languages</td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>tagline</td>
+    <td>title</td>
+  </tr>
+  <tr>
+    <td>vote_average</td>
+    <td>vote_count</td>
+    <td></td>
+  </tr>
+</table>
 
+#### Visualization: 
+Binning movies into Revenue bins of 100 Million
 <p align="center">
   <img src="PrithviCodes/RevenueVSCount.png">
 </p>
@@ -125,7 +167,16 @@ To determine threshold for cutoff for feature selection
 
 
 
-# 5. Movie Revenue Prediction with linear ridge regression (Sanmesh)
+
+# 5. Movie Revenue Prediction 
+
+## Experiments and Model Testing
+
+<p align="center">
+  <img src="PrithviCodes/plots/flow_chart.png">
+</p>
+
+### Linear ridge regression (Sanmesh)
 
 First, we tried to predict the exact revenue of the test set of movies using linear ridge regression. Ridge regression was chosen because it would it would protect against overfitting of the data, especially when there are a huge number of features. 
 Cross validation was performed to find the optimal alpha or regularization value.
