@@ -126,7 +126,7 @@ To determine threshold for cutoff for feature selection
   <img src="PrithviCodes/plots/25_top_XGB.png" >
 </p>
 
-
+We observed the most important features which have high correlation to the box office revenue of a movie, and have plotted the top 25 of these.
 
 # 5. Movie Revenue Prediction 
 
