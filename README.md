@@ -306,8 +306,7 @@ What is interesting is that the PCA data with normalization performed worse than
   <img src="Tarushree_RF plots/Scatter_RF_100.png" >
 </p>
 <p align="center">
-  <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png
-" >
+  <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png" >
 </p>
 
 
