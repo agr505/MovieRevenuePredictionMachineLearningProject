@@ -108,7 +108,7 @@ Binning movies into Revenue bins of 100 Million
 ---
 # 4. Feature Reduction 
 
-Our data has 10955 features, which is huge, especially in relation to the 3376 data points. To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required. To achieve this, PCA and feature selection were pursued.
+Our data has 10,955 features, which is huge, especially in relation to the 3376 data points. To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required. To achieve this, PCA and feature selection were pursued.
  
 ### (1). PCA (Sanmesh)
  
