@@ -355,7 +355,7 @@ We have plotted our Random Forest classification results for both bin sizes as c
 With random forest, we see improved classification as compared to SVM and overall accuracy is also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.  
 
 
-# 7 Final Conclusions (still testing556)  
+# 7 Final Conclusions (still testing7)  
 
 ##### TABLES
 
