@@ -1,5 +1,6 @@
 ﻿# Project title: Movie Revenue Prediction
-## Team members: Sanmesh, Aaron, Tarushree, Aastha, Prithvi
+## Team members: Sanmeshkumar Udhayakumar, Aaron Reich, Tarushree Gandhi, Aastha Agrawal, Prithvi Alva Suresh  
+##7641 Team2
 
 ---
 <p align="center">
@@ -15,8 +16,8 @@ In the process of our analysis, we also aim to find the variables most associate
 ---
 # 2. Dataset and visualization 
 
-### (1). Dataset: The Movies DataBase (TMDB) 5000 Movie Dataset (from Kaggle)
-#### Features in the dataset: 24 features in total &nbsp;&nbsp;&nbsp;
+### Dataset: The Movies DataBase (TMDB) 5000 Movie Dataset (from Kaggle)
+#### Features in the dataset: 10 features in total &nbsp;&nbsp;&nbsp;
 <!--
 1. budget    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. genres
 3. keywords &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. production companies
@@ -62,7 +63,7 @@ We sorted movies into appropriate bin size ($100 million) to view the frequency 
 - Encoding categorical features: conversion of data into binary format.
   - Different classes in a column (Lists) allotted their own column, and each row will indicate if column existed or not by assigning either a 1 or a 0. 
   - If Stan Lee is in the list of producers for any movie, then now 'Stan Lee' will become a binary feature. If a movie has Stan Lee as the producer the feature will be a 1, otherwise it'll be a 0.
-- Data was then divided into Test Validation and Training sets (60%, 20% and 20%) for further model training and testing.
+- Data was then divided into Test, Validation, and Training sets (60%, 20% and 20%) for further model training and testing.
 
 
 ---
@@ -70,14 +71,14 @@ We sorted movies into appropriate bin size ($100 million) to view the frequency 
 
 Our data has 10955 features, which is huge, especially in relation to the 3376 data points. To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required. To achieve this, PCA and feature selection were pursued.
  
-### (1). PCA (Sanmesh)
+### (1). PCA 
  
 PCA was done in two ways:
 1. (PCA_noScale_20Comp) Data wasn't scaled, and number of principal components selected = 20
 2. (PCA_Scale_0.995VarRecov) Z-Score normalization was done on the features, and number of principal components = # to recover 99% of the variance. To achieve normalization, remove the mean of the feature and scale to unit variance. The Z-Score of a sample x is calculated as: z = (x - u) / s.
 
 #### PCA_noScale_20Comp DETAILS
-Recovered Variance: 99.99999999999851  
+Recovered Variance: 99.99999999999851%  
 Original # features: 10955  
 Reduced # features: 20  
 Recovered Variance Plot Below for PCA_noScale_20Comp%    
@@ -87,7 +88,7 @@ Note: Huge first principal component is probably due to othe feature of budget, 
 </p>
 
 #### PCA_Scale_99%VarRecov DETAILS
-Recovered Variance:  99.00022645866223  
+Recovered Variance:  99.00022645866223%  
 Original # features: 10955  
 Reduced # features: 2965  
 Recovered Variance Plot Below for PCA_Scale_99%VarRecov  
@@ -95,7 +96,7 @@ Recovered Variance Plot Below for PCA_Scale_99%VarRecov
   <img src="SanmeshCodes/Figures/99PercRecovVarPCAGraph.png" >
 </p>
 
-### (2). Feature selection (Prithvi)
+### (2). Feature selection 
 
 #### Using XGBRegressor
 
@@ -108,14 +109,14 @@ Once we visualized the graphs we then manually set a threshold and gathered 150 
 
 ##### Feature importances of encoded movie data
 ######  2000 features sorted by feature importance scores of XGBRegressor
-<p align="left">
+<p align="center">
   <img src="PrithviCodes/plots/xgb_2000.png" >
 </p>
 
 ###### 150 to 200 features feature importance scores of XGBRegressor
 
 To determine threshold for cutoff for feature selection
-<p align="left">
+<p align="center">
   <img src="PrithviCodes/plots/xgb_150_200.png" >
 </p>
 
@@ -136,7 +137,7 @@ To determine threshold for cutoff for feature selection
   <img src="PrithviCodes/plots/flow_chart.png">
 </p>
 
-### Linear ridge regression (Sanmesh)
+### Linear Ridge Regression  
 
 
 First, we tried to predict the exact revenue of the test set of movies using linear ridge regression. Ridge regression was chosen because it would protect against overfitting of the data, especially when there are huge number of features. 
@@ -190,7 +191,7 @@ Closeup of Revenue Prediction with Feature Selection data as input
 
 
 ------------
-
+### Linear Ridge Regression Results  
 The ranking of the input data that gave the highest R^2 scores and lowest RMSE values from best to worst are:
 1. Feature Selection 
 2. PCA No scaling, 20 components  
@@ -204,10 +205,10 @@ It isn't clear completely why feature selection performs better than PCA, but on
   
 What is interesting is that the PCA data with normalization performed worse than the PCA without normalization. It is counterintuitive because the goal of PCA is to identify the axis with the most variance, and this goal may be impeded when one feature has much bigger values than other features (in our case, the feature is budget). However, the non-normalized PCA might have performed better because the data captures the budget mainly in the first principal component. We see from our correlation graphs and other literature [1] that budget is one of the leading indicators to predicting movie revenue, so it makes sense that when using PCA data without normalization, it will perform better than pca with normalization. 
 
-# 6. Classification Models ()
+# 6. Classification Models
 
 
-### Binning of Y values 
+### Binning of Y Revenue values 
 
 ### SVM
 We used Support Vector Machine as a classification model in order to classify the movie data into the correct revenue category. The data is not linearly separable. We were able to get the best performance with the Radial Basis Function kernel. We have experimented with different hyperparameters including gamma, the kernel coefficient, and C the regularization parameter. We found the optimal values for the hyperparameters by using 3-Fold Cross Validation with F1 score as the metric. We used a specific F1 score variation that first calculated the metrics for each class and then found their average weighted by the number of true instances for each class. We needed to use this because of our class imbalance. 
@@ -217,11 +218,11 @@ First we kept Gamma constant at its default value of ‘auto’ for the Sklearn 
 <p align="center">
   <img src="PrithviCodes/BinVSF1SVM_2.png" >
 </p>
-<p align="left">
+<p align="center">
   <img src="PrithviCodes/Scatter_predVSActual.png" style="width:50%" >
 </p>
 
-<p align="right">
+<p align="center">
   <img src="PrithviCodes/Scatter_predVSActual100.png" style="width:50%" >
 </p>
 
@@ -239,7 +240,7 @@ We have plotted our depicted our SVM classification results for both bin sizes b
   <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
 </p> 
 
-<p align="left">
+<p align="center">
   <img src="Figures/SVM_100_Norm_ConfusionMat.png" >
 </p> 
 
@@ -343,7 +344,7 @@ We have plotted our Random Forest classification results for both bin sizes as c
 <p align="center">
   <img src="Figures/RF_300_Norm_ConfusionMat.png" >
 </p>
-<p align="left">
+<p align="center">
   <img src="Figures/RF_100_Norm_ConfusionMat.png" >
 </p>
 With random forest, we see improved classification as compared to SVM and overall accuracy is also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.
