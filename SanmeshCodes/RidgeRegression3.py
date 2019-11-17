@@ -14,7 +14,7 @@ loadTrainAndTestData = 1
 dataset_X_reimported = pd.read_csv('xgFeatures_156.csv')
 numpyUrl = 'ReducedRawData/pcaOutputScalingNum99Perc.npy'
 ##testAndTrainName = "pcaOutputScalingNum99Perc.npy"
-testAndTrainName = "pcaOutputNoScaleNum20.npy"
+testAndTrainName = "pcaOutputScalingNum99Perc.npy"
 #loadData#############################################
 #########################################################
 from sklearn import linear_model
