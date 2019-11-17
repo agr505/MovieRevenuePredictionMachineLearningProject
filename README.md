@@ -225,6 +225,10 @@ What is interesting is that the PCA data with normalization performed worse than
 ### Binning of Y values 
 
 ### SVM
+We used Support Vector Machine as a classification model in order to classify the movie data into the correct revenue category. The data is not linearly separable. We were able to get the best performance with the Radial Basis Function kernel. We have experimented with different hyperparameters including gamma, the kernel coefficient, and C the regularization parameter. We found the optimal values for the hyperparameters by using 3-Fold Cross Validation with F1 score as the metric. We used a specific F1 score variation that first calculated the metrics for each class and then found their average weighted by the number of true instances for each class. We needed to use this because of our class imbalance. 
+
+First we kept Gamma constant at its default value of ‘auto’ for the Sklearn Support Vector Classifier call which uses 1/( n features). We then tuned the C parameter to find the optimal value for C. We then fixed C at its default value for the Sklearn Support Vector Classifier call at 1. We tuned the Gamma parameter to find its optimal value. After we obtained the optimal hyperparameters using 3-Fold Cross Validation, we trained the training set with these chose hyperparameters. We then tested our trained model on the test set. 
+
 <p align="center">
   <img src="PrithviCodes/BinVSF1SVM_2.png" >
 </p>
@@ -239,10 +243,11 @@ What is interesting is that the PCA data with normalization performed worse than
 <p align="center">
   <img src="PrithviCodes/plots/Line_chart_C_f1score.png" >
 </p>
+C is the regularization parameter. C affects the complexity of the decision rule assigning penalties for the misclassifying of data points. When C is small, the Support Vector Machine classifier is more tolerant of misclassifying data points. The classifier will have high bias, low variance. When C is large, the classifier is very intolerant to the misclassification of data points. It has low bias, high variance. As seen in our F1-score vs C-hyperparameter plot for classification of data points within a $300 million revenue interval,  the model has a F1 score of 0.8094 when it has a C value of 1. This is thus the optimal value for C from our hyperparameter tuning process. When C is increased higher than 1, the increase in regularization leads to a decrease in model performance.
 <p align="center">
   <img src="PrithviCodes/plots/Line_chart_gamma_f1score.png" >
 </p> 
-
+Gamma, the kernel coefficient, affects the spread of the kernel and thus affecting the decision boundary. When Gamma is low, the curve of the decision boundary is low. When Gamma is high, the curve of the decision boundary is high. As seen in our F1-score vs Gamma-hyperparameter plot for classification of data points within a $300 million revenue interval,  the model has a F1 score of 0.8443 when it has a Gamma value of 1e-9. As we increase the value of Gamma, the curve of the decision boundary increases. The model begins to decrease in performance.
 
 We have plotted our depicted our SVM classification results for both bin sizes below:
 <p align="center">
