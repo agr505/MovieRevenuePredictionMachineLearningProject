@@ -324,15 +324,17 @@ Another possible avenue to explore for this class imbalance problem with SVM wou
   <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png" height="500" width="600">
 </p>
 
+<p align="center">
+  <img src="Figures/RF_300_Norm_ConfusionMat.png" >
+</p>
+<p align="left">
+  <img src="Figures/RF_100_Norm_ConfusionMat.png" >
+</p>
+
+
 
 
 # 7. Final Conclusions
-
-sduqiwo
-
-
-Checking checking checking 
- 
 
 
 # 8. Reference
