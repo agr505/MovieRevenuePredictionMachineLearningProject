@@ -325,7 +325,7 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.</p>
   <img src="Tarushree_RF plots/F1VsEst_300.png" height="500" width="600">
 </p>
 <br><br><br>
-<p style="text-align:center;">Bin size = 100</p>
+<p align="center">Bin size = 100</p>
 <p align="center"> 
   <img src="Tarushree_RF plots/F1VsEst_100.png" height="500" width="600">
 </p>
@@ -346,12 +346,12 @@ We choose the depth corresponding to the highest F1 score value to be the best D
 Below are the graphs for 2 different Bin sizes - 100 and 300.
 
 <br><br>
-<p style="text-align:center;">Bin size = 300</p>
+<p align="center">Bin size = 300</p>
 <p align="center">
   <img src="Tarushree_RF plots/F1VsDepth_300.png" height="500" width="600">
 </p>
 <br><br>
-<p style="text-align:center;">Bin size = 100</p>
+<p align="center">Bin size = 100</p>
 <p align="center">
   <img src="Tarushree_RF plots/F1VsDepth_100.png" height="500" width="600">
 </p>
@@ -363,7 +363,7 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.
 2. Also, we observed that the error is higher incase of 100 bins as compared to when we have 300 bins. This shows that having more number of classes is leading the model to clearly segregate the data by grouping the data points more efficiently.
 
 <br><br>
-<p style="text-align:center;">Bin size = 300</p>
+<p align="center">Bin size = 300</p>
 
 <p align="center">
   <img src="Tarushree_RF plots/Scatter_RF_300.png" height="500" width="600">
@@ -371,7 +371,7 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.
 
 
 <br><br>
-<p style="text-align:center;">Bin size = 100</p>
+<p align="center">Bin size = 100</p>
 
 <p align="center">
   <img src="Tarushree_RF plots/Scatter_RF_100.png" height="500" width="600">
