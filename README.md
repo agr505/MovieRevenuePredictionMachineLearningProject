@@ -110,7 +110,7 @@ We sorted movies into appropriate bin size ($100 million) to view the frequency 
 ---
 # 4. Feature Reduction 
 
-Our data has 10955 features, which is huge, especially in relation to the 3376 data points. To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required. To achieve this, PCA and feature selection were pursued.
+Our data has 10,955 features, which is huge, especially in relation to the 3376 data points. To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required. To achieve this, PCA and feature selection were pursued.
  
 ### (1). PCA (Sanmesh)
  
@@ -285,6 +285,14 @@ What is interesting is that the PCA data with normalization performed worse than
   <img src="PrithviCodes/plots/Line_chart_gamma_f1score.png" >
 </p> 
 
+<p align="center">
+  <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
+</p> 
+
+<p align="center">
+  <img src="Figures/SVM_100_Norm_ConfusionMat.png" >
+</p> 
+
 ### Random Forest
 <p align="center">
   <img src="Figures/RandomForest_Depth_300_Interval.png" >
@@ -292,6 +300,15 @@ What is interesting is that the PCA data with normalization performed worse than
 <p align="center">
   <img src="Figures/RandomForest_NumberofEstimators_300_Interval.png" >
 </p>
+
+<p align="center">
+  <img src="Figures/RF_300_Norm_ConfusionMat.png" >
+</p> 
+
+<p align="center">
+  <img src="Figures/RF_100_Norm_ConfusionMat.png" >
+</p> 
+
 # 7. Final Conclusions
  
 
