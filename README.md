@@ -1,5 +1,5 @@
 # Project title: Movie Revenue Prediction
-## Team members: Sanmesh, Aaron, Tarushree, Aastha, Prithvi
+## Team members: Sanmesh, Aaron, Tarushree, Aastha, Prithvi, George
 
 ---
 <p align="center">
