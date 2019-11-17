@@ -283,7 +283,9 @@ What is interesting is that the PCA data with normalization performed worse than
 <p align="center">
   <img src="Figures/RandomForest_Depth_300_Interval.png" >
 </p>
-
+<p align="center">
+  <img src="Figures/RandomForest_NumberofEstimators_300_Interval.png" >
+</p>
 # 7. Final Conclusions
  
 
