@@ -27,45 +27,25 @@ We aim to find the variables most associated with film revenue, and to see how t
 9. cast
 10. crew  
 -->
-<table>c
+<table>
   <tr>
-    <td>ID</td>
-    <td>Title</td>
-    <td>crew</td>
+    <td>Budget</td>
+    <td>Genres</td>
+    <td>Keywords</td>
   </tr>
   <tr>
-    <td>budget</td>
-    <td>genres</td>
-    <td>homepage</td>
+    <td>Production Companies</td>
+    <td>Release Date</td>
+    <td>Runtime</td>
   </tr>
   <tr>
-    <td>id</td>
-    <td>keywords</td>
-    <td>original_language</td>
+    <td>Spoken Languages</td>
+    <td>Status</td>
+    <td>Cast</td>
   </tr>
   <tr>
-    <td>original_title/td>
-    <td>overview</td>
-    <td>popularity</td>
-  </tr>
-  <tr>
-    <td>production_companies</td>
-    <td>production_countries</td>
-    <td>release_date</td>
-  </tr>
-  <tr>
-    <td>revenue</td>
-    <td>runtime</td>
-    <td>spoken_languages</td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>tagline</td>
-    <td>title</td>
-  </tr>
-  <tr>
-    <td>vote_average</td>
-    <td>vote_count</td>
+    <td>Crew</td>
+    <td></td>
     <td></td>
   </tr>
 </table>
