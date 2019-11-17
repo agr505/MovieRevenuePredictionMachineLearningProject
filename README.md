@@ -327,7 +327,13 @@ Another possible avenue to explore for this class imbalance problem with SVM wou
 
 
 # 7. Final Conclusions
+
 sduqiwo
+
+
+Checking checking checking 
+ 
+
 
 # 8. Reference
 [1] What makes a successful film? Predicting a film’s revenue and user rating with machine learning. (2019). Retrieved 28 September 2019, from https://towardsdatascience.com/what-makes-a-successful-film-predicting-afilms-revenue-and-user-rating-with-machine-learning-e2d1b42365e7 
