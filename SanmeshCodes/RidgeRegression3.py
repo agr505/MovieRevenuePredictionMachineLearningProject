@@ -5,42 +5,38 @@ import pandas as pd
 import matplotlib
 matplotlib.use("TKAgg")
 from matplotlib import pyplot as plt
-
+from sklearn import linear_model
+import numpy as np
+import pandas as pd
+from numpy import genfromtxt
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.linear_model import RidgeCV, Ridge
+from sklearn.model_selection import train_test_split, cross_val_score
 
 #INPUTS#############################################
 #########################################################
-loadRawXFromNumpy = 1
-loadTrainAndTestData = 1
-dataset_X_reimported = pd.read_csv('xgFeatures_156.csv')
+loadRawXFromNumpy = 0
+loadTrainAndTestData = 0
+#dataset_X_reimported = pd.read_csv('xgFeatures_156.csv')
 numpyUrl = 'ReducedRawData/pcaOutputScalingNum99Perc.npy'
 ##testAndTrainName = "pcaOutputScalingNum99Perc.npy"
 testAndTrainName = "pcaOutputScalingNum99Perc.npy"
 #loadData#############################################
 #########################################################
-from sklearn import linear_model
-import numpy as np
-import pandas as pd
-from numpy import genfromtxt
-from sklearn.metrics import mean_squared_error
-from sklearn.linear_model import RidgeCV
-from sklearn.linear_model import Ridge
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import r2_score
 
 dataset_X_reimported = pd.read_csv('xgFeatures_156.csv')
 dataset_y_reimported = pd.read_csv('Encoded_y_revenue.csv') #or - rating.csv
 dataset_X_reimported.rename(columns={'5':'Film runtime',
                                      '0':'Film budget',
                                      '4':'Day of year',
-                                     '7':'Year of release',}, 
-                 inplace=True)
+                                     '7':'Year of release',}, inplace=True)
 dataset_reimported = pd.concat([dataset_X_reimported,dataset_y_reimported],axis=1)
 dataset_reimported = dataset_reimported.replace([np.inf, -np.inf], np.nan)
 dataset_reimported = dataset_reimported.dropna() #just two rows are lost by dropping NaN values. Better than using mean here
 if loadRawXFromNumpy ==1:
         X = np.load(numpyUrl)
 else:
-        X = dataset_reimported.iloc[:, 1:-2].values
+        X = dataset_reimported.iloc[:, 0:-1].values #1:-2
 y = dataset_reimported.iloc[:, -1].values
 
 def calc_rmse(pred, label): 
@@ -55,6 +51,27 @@ def find_best_alpha(X,y):
 	ridgecv = RidgeCV(alphas=[0.001, 0.1, 0.5, 1, 5, 10],normalize = True).fit(X, y)
 	best_alpha=ridgecv.alpha_
 	return best_alpha
+
+#def cross_validation(xtrain,ytrain,alpha):
+
+def plot_r2_for_var_alpha(xtrain,ytrain,alphas):
+    r2values=[]
+    for i in alphas:
+        reg = Ridge(alpha=i,normalize=True)
+        #r2=cross_val_score(reg, xtrain, ytrain, cv=3,  scoring='r2')
+        #r2sum=r2.sum(axis=0)
+        #r2average=r2sum/3
+        #r2values.append(r2sum/3)
+        reg.fit(xtrain,ytrain)
+        r2values.append(r2_score(ytrain,reg.predict(xtrain)))
+    plt.xscale('log')
+    plt.plot(alphas,r2values)
+    plt.xlabel('alpha')
+    plt.ylabel('R2')
+    plt.title("Ridge Regression: R2 Score against different Alpha values")
+    plt.show()
+    #plt.savefig("Ridge_Regression_R2_score_against_alpha.png")
+    #plt.close()
 
 #Calculate Alpha#############################################
 #########################################################
@@ -71,6 +88,9 @@ alpha=find_best_alpha(xtrain,ytrain)
 print("Alpha: {}".format(alpha))
 reg = Ridge(alpha=alpha,normalize=True)
 reg.fit(xtrain,ytrain)
+ytrain_pred=reg.predict(xtrain)
+norm_rmse=normalized_rmse(ytrain_pred,ytrain)
+print("Normalized RMSE for xtrain: {}".format(norm_rmse))
 ypred=reg.predict(xtest)
 #rmse=mean_squared_error(ytest, ypred)
 rmse=calc_rmse(ypred,ytest)
@@ -78,8 +98,10 @@ norm_rmse=normalized_rmse(ypred,ytest)
 ##np.savetxt('ypredRidgeRegWithPCA.csv', ypred, delimiter=',')
 ##np.savetxt('ytestRidgeRegWithPCA.csv', ytest, delimiter=',')
 print("RMSE: {}".format(rmse))
-print("Normalized RMSE: {}".format(norm_rmse))
+print("Normalized RMSE for xtest: {}".format(norm_rmse))
 print("R2 score" ,r2_score(ytest, ypred))
+
+plot_r2_for_var_alpha(xtrain,ytrain,[0.0001, 0.001, 0.01, 0.1, 0.5, 0.8, 1, 5])
 
 x = range(ytest.size)
 fig = plt.figure()
@@ -106,8 +128,21 @@ ax2.scatter(x,ypredSorted, s=10, c='r', marker="o", label='Predicted Revenue')
 plt.errorbar(x, (ytestSorted+ypredSorted)/2, yerr=np.abs(ytestSorted-ypredSorted)/2, xlolims=True, label='error bar', fmt = ',')
 plt.legend(loc='upper left');
 plt.title("Test Actual vs Predicted Revenue, sorted by Actual Revenue")
+<<<<<<< Updated upstream
 plt.xlabel("Particular x data point from pcaOutputScalingNum99Perc")
+=======
+plt.xlabel("Particular x data points")
+>>>>>>> Stashed changes
 plt.ylabel("Revenue")
+plt.savefig("Ridgeregression_Scatter_onXGBoost_Features.png")
+plt.close()
+#plt.show()
 
 
-plt.show()
+#Scatter plot for Ridge regression
+#sortedIndices = np.argsort(ytest)
+#ytestSorted = ytest[sortedIndices]
+#ypredSorted = ypred[sortedIndices]
+
+
+

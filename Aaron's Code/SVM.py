@@ -16,21 +16,16 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 
 
+
 ###################################
 
 #########################################
 xfromXGB =np.load("xtrain_xgFeatures_156.npy")
 y = np.load("ytrain_xgFeatures_156.npy")
 
-
-
 binWindowSize = 300*(10**6)
 
 y_ = (y/binWindowSize).astype(int)
-
-
-
-
 
 ##################################################################
 
