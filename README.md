@@ -286,6 +286,22 @@ What is interesting is that the PCA data with normalization performed worse than
   <img src="PrithviCodes/plots/Line_chart_gamma_f1score.png" >
 </p> 
 
+<<<<<<< Updated upstream
+=======
+We have plotted our depicted our SVM classification results for both bin sizes below:
+<p align="center">
+  <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
+</p> 
+
+<p align="left">
+  <img src="Figures/SVM_100_Norm_ConfusionMat.png" >
+</p> 
+
+Although we have achieved high accuracy and F1-score, we see from the confusion matrix that majority of our test instances are predicted to be in bin 0 or 1. This can be explained by class imbalance in the training data. There are more number of examples which belong to class 0 and 1 as compared to other categories. To overcome this challenge, we explored Random Forest which performs better with class imbalance in training data.
+
+Another possible avenue to explore for this class imbalance problem with SVM would be to increase the penalty for misclassifying minority classes. This could be done by inversely weighing 'C' with class size. This could be explored in future.
+
+>>>>>>> Stashed changes
 ### Random Forest
 <p align="center">
   <img src="Figures/RandomForest_Depth_300_Interval.png" >
