@@ -17,12 +17,12 @@ d[100] = 0.5301725328598704
 d[50] = 0.35620644263291756
 
 gam = {}
-gam[300] = "gamma: 1e-7"
+gam[300] = "gamma: 1e-9"    # changed
 gam[100] = "gamma: 1e-09"
 gam[50] = "gamma: 1e-07"
 
 C = {}
-C[300] = "C: 100"
+C[300] = "C: 1"
 C[100] = "C: 10"
 C[50] = "C: 10"
 
@@ -67,8 +67,8 @@ plt.ylabel('F1-score/Accuracy')
 ax.set_xlabel("Bin Sizes ($ Million)", labelpad=30)
 #plt.xlabel('Revenue $ (Million)', 30)
 plt.tight_layout()
-
-#plt.show()
+plt.legend()
+# plt.show()
 
 plt.savefig('BinVSF1SVM_2.png')
 
