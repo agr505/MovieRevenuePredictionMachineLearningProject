@@ -1,6 +1,6 @@
 ﻿# Project title: Movie Revenue Prediction
 ## Team members: Sanmeshkumar Udhayakumar, Aaron Reich, Tarushree Gandhi, Aastha Agrawal, Prithvi Alva Suresh  
-##7641 Team2
+## 7641 Team2
 
 ---
 <p align="center">
