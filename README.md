@@ -285,11 +285,12 @@ What is interesting is that the PCA data with normalization performed worse than
   <img src="PrithviCodes/plots/Line_chart_gamma_f1score.png" >
 </p> 
 
+We have plotted our classification result for both 300
 <p align="center">
   <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
 </p> 
 
-<p align="center">
+<p align="left">
   <img src="Figures/SVM_100_Norm_ConfusionMat.png" >
 </p> 
 
@@ -305,7 +306,7 @@ What is interesting is that the PCA data with normalization performed worse than
   <img src="Figures/RF_300_Norm_ConfusionMat.png" >
 </p> 
 
-<p align="center">
+<p align="left">
   <img src="Figures/RF_100_Norm_ConfusionMat.png" >
 </p> 
 
