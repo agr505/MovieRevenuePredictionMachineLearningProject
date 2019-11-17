@@ -204,7 +204,7 @@ Comparing RMSE and R2 of Ridge Regression on Three Input Data
   <img src="SanmeshCodes/Figures/RidgeRegressionR%5E2.PNG">
 </p>
 
-The plots below are the predicted vs actual revenue predicted from Ridge Regression. The data was sorted by the actual y values in order to make it easier to view the results. Alpha was determined through kfold method and was 0.5 for feature selection.  
+The plots below are the predicted vs actual revenue predicted from Ridge Regression. The data was sorted by the actual y revenue values in order to make it easier to view the results. Alpha was determined through kfold method and was 0.5 for feature selection.  
 
 Revenue Prediction with PCA_noScale_20Comp data as input
 <p align="center">
@@ -264,7 +264,7 @@ What is interesting is that the PCA data with normalization performed worse than
 # 6. Classification Models ()
 
 
-### Binning of Y values 
+### Binning of Y Revenue values 
 
 ### SVM
 <p align="center">
