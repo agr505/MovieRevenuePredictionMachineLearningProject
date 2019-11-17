@@ -373,7 +373,7 @@ Overall, for dataset dimension reduction, feature selection worked the best acro
   
 # 8. Reference
 <ol>
-<li>What makes a successful film? Predicting a film’s revenue and user rating with machine learning. (2019). Retrieved 28 September 2019, from https://towardsdatascience.com/what-makes-a-successful-film-predicting-afilms-revenue-and-user-rating-with-machine-learning-e2d1b42365e7
+<li>What makes a successful film? Predicting a film’s revenue and user rating with machine learning. (2019). Retrieved 28 September 2019, from https://towardsdatascience.com/what-makes-a-successful-film-predicting-afilms-revenue-and-user-rating-with-machine-learning-e2d1b42365e7</li>
 <li>Dan Cocuzzo, Stephen Wu, "Hit or Flop: Box Office Prediction for Feature Films", Stanford University, 2013.</li>
 <li>Nahid Quader, Md. Osman Gani, Dipankar Chaki, and Md. Haider Ali, “A Machine Learning Approach to Predict Movie Box-Office Success,”in 20th International Conference of Computer and Information Technology (ICCIT), December 2017.</li>
 <li>Mahesh Joshi, Dipanjan Das, Kevin Gimpel, and Noah A. Smith. Movie reviews and revenues: an experiment in text regression. In Human Language Technologies: The 2010 Annual Conference of the North American Chapter of the Association for Computational Linguistics, HLT ’10, 2010.</li>
