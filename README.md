@@ -370,3 +370,16 @@ With random forest, we see improved classification as compared to SVM and overal
 <li>Mahesh Joshi, Dipanjan Das, Kevin Gimpel, and Noah A. Smith. Movie reviews and revenues: an experiment in text regression. In Human Language Technologies: The 2010 Annual Conference of the North American Chapter of the Association for Computational Linguistics, HLT ’10, 2010.</li>
 <li>W. Zhang, S. Skiena Improving movie gross prediction through news analysis International joint conference on web intelligence and intelligent agent technology, IEEE/WIC/ACM (2009)</li>
 </ol>
+
+# 9. Contributions
+
+<ol>
+<li>Proposal- Sanmesh, Aaron, Tarushree, Aastha, Prithvi</li>
+<li>Overview and Project Motivation - Prithvi, Sanmesh</li>
+<li>Dataset visualization - Prithvi</li>
+<li>Feature Selection - Prithvi</li>
+<li>PCA -  Sanmesh</li>
+<li>Ridge Regression- Aastha, Sanmesh</li>
+<li>SVM - Aaron, Tarushree, Aastha, Prithvi, Sanmesh</li>
+<li>Random Forest - Aaron, Tarushree, Aastha, Sanmesh</li>
+</ol>
