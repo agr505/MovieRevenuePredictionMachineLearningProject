@@ -8,9 +8,9 @@
 
 # 1. Overview of the project and Motivation 
 ### Motivation: 
-To predict the Box office revenue of a movie based on it's characteristics. 
-Our analysis will allow Directors/Producers to decide on what characteristics of the movie will affect their box office revenue, and what to modify in their selection of actors or investment in the movies to maximize their profit. Such analysis will also allow other interested third parties to predict the success of a film before it is released. 
-We aim to find the variables most associated with film revenue, and to see how the various revenue prediction models are affected by them.
+
+The motivation for this project was to understand why some movies are successful in the box office and why other movies perform poorly. Understanding which components of the movie production and distribution process correlate with high box office revenue can have great value for movie production companies by allowing for the production of higher quality movies and distributed to theatres at more optimal release dates. 
+We aim to find the parameters in the data which are most correlated with film revenue, and to use the most important parameters in various classification and regression predictive models to predict film revenue.
 
 ---
 # 2. Dataset and visualization 
@@ -87,7 +87,9 @@ We aim to find the variables most associated with film revenue, and to see how t
 </table>
 
 #### Visualization: 
-Binning movies into Revenue bins of 100 Million
+Preliminary visualization to see the distribution of revenue's of the Movies we are studying.
+We sorted movies into appropriate bin size ($100 million) to view the frequency of movies belonging to each bin size.
+
 <p align="center">
   <img src="PrithviCodes/RevenueVSCount.png">
 </p>
