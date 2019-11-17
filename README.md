@@ -1,5 +1,5 @@
 # Project title: Movie Revenue Prediction
-## Team members: Sanmesh, Aaron, Tarushree, Aastha, Prithvi
+## Team members: Sanmesh, Aaron, Tarushree, Aastha, Prithvi, George
 
 ---
 <p align="center">
@@ -258,9 +258,9 @@ Feature Selection gave us the best performance for ridge regression. Our target 
 
 We can see that for feature selection input, there is bigger error in prediction for bigger test revenues. The predicted revenue plot does have a similar shape to the actual revenue, this showing that the prediction values are trying to follow the actual values. However, the predicted value is not able to keep up with the increase of the actual revenue. This may be because there is a smaller % of actual revenues that are bigger. This may be corrected by having a bigger dataset to train on than only having 3376 samples. 
 
-It isn't clear completely why feature selection performs better than PCA, but one factor may be that some features are just an actor name, with values only binary 1 or 0 indicating whether the actor is in the movie. So maybe because there are very limited values, it is better to get rid of some of these features through feature selection, rather than transforming these features into new components through PCA. Maybe in the future, we will look into other methods of encoding the feature of actors into numerical data. One potential example is having one feature for all actors, and just encoding the actors into a numerical value from 0 to the # of actors.
+It isn't clear completely why feature selection performs better than PCA, but one factor may be that there are some features such as a particular actor name, with values only binary 1 or 0 indicating whether the actor is in the movie. So maybe PCA doesn't work as well on binary value features, and there is conflicting opinion on this online in the ML community. Maybe in the future, we will look into other methods of encoding the feature of actors into numerical data. One potential example is having one feature for all actors, and just encoding the actors into a numerical value from 0 to the # of actors.
   
-What is interesting is that the PCA data with normalization performed worse than the PCA without normalization. It is counterintuitive because the goal of PCA is to identify the axis with the most variance, and this goal may be impeded when one feature has much bigger values than other features (in our case, the feature is budget). However, the non-normalized PCA might have performed better because the data captures the budget mainly in the first principal component. We see from our correlation graphs and other literature [1] that budget is one of the leading indicators to predicting movie revenue, so it makes sense that when using PCA data without normalization, it will perform better than pca with normalization. 
+What is interesting is that the PCA data with normalization performed worse than the PCA without normalization. It is counterintuitive because the goal of PCA is to identify the axis with the most variance, and this goal may be impeded when one feature has much bigger values than other features (in our case, the feature is budget). However, the non-normalized PCA might have performed better because the data captures the budget mainly in the first principal component. We see from our correlation graphs and other literature [1] that budget is one of the leading indicators to predicting movie revenue, so it makes sense that when using PCA data without normalization, it will perform better than pca with normalization. Also, some features being binary might also affect the normalization of the data. Also, the PCA normalization data that captured 99% variance had 2965 size, which is a huge amount of features relative to the 3376 data points, and thus might have led to more innacurate results than the PCA without scaling that had only 20 components.
 
 # 6. Classification Models ()
 
@@ -286,17 +286,58 @@ What is interesting is that the PCA data with normalization performed worse than
   <img src="PrithviCodes/plots/Line_chart_gamma_f1score.png" >
 </p> 
 
+
+We have plotted our depicted our SVM classification results for both bin sizes below:
+<p align="center">
+  <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
+</p> 
+
+<p align="left">
+  <img src="Figures/SVM_100_Norm_ConfusionMat.png" >
+</p> 
+
+Although we have achieved high accuracy and F1-score, we see from the confusion matrix that majority of our test instances are predicted to be in bin 0 or 1. This can be explained by class imbalance in the training data. There are more number of examples which belong to class 0 and 1 as compared to other categories. To overcome this challenge, we explored Random Forest which performs better with class imbalance in training data.
+
+Another possible avenue to explore for this class imbalance problem with SVM would be to increase the penalty for misclassifying minority classes. This could be done by inversely weighing 'C' with class size. This could be explored in future.
+
+
 ### Random Forest
 <p align="center">
-  <img src="Figures/RandomForest_Depth_300_Interval.png" >
+  <img src="Tarushree_RF plots/F1VsDepth_300.png" height="500" width="600">
 </p>
 <p align="center">
-  <img src="Figures/RandomForest_NumberofEstimators_300_Interval.png" >
+  <img src="Tarushree_RF plots/F1VsEst_300.png" height="500" width="600">
 </p>
+<p align="center">
+  <img src="Tarushree_RF plots/F1VsDepth_100.png" height="500" width="600">
+</p>
+<p align="center"> 
+  <img src="Tarushree_RF plots/F1VsEst_100.png" height="500" width="600">
+</p>
+<p align="center">
+  <img src="Tarushree_RF plots/Scatter_RF_300.png" height="500" width="600">
+</p>
+<p align="center">
+  <img src="Tarushree_RF plots/Scatter_RF_100.png" height="500" width="600">
+</p>
+<p align="center">
+  <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png" height="500" width="600">
+</p>
+
+<p align="center">
+  <img src="Figures/RF_300_Norm_ConfusionMat.png" >
+</p>
+<p align="left">
+  <img src="Figures/RF_100_Norm_ConfusionMat.png" >
+</p>
+
+
+
+
 # 7. Final Conclusions
- 
+
 
 # 8. Reference
 [1] What makes a successful film? Predicting a film’s revenue and user rating with machine learning. (2019). Retrieved 28 September 2019, from https://towardsdatascience.com/what-makes-a-successful-film-predicting-afilms-revenue-and-user-rating-with-machine-learning-e2d1b42365e7 
-
-
+[2] h98uesrhmdifvherdsfredsiojfveioadschj 8aerdsh ciofvjerdiosjcf[mxerwjds9gtkvsed
+[3] arkpofaewksporkfweoskrpfksdpokafkewdsofkesdopxrkopfwae,csporkf4	wq[dskxf
