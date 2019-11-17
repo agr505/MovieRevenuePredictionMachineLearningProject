@@ -219,7 +219,7 @@ What is interesting is that the PCA data with normalization performed worse than
   
 To be able to classify movies into different categories of revenue, we needed to bin the prediction class into various intervals.
 
-We set different values of the bin-size in our following experiments. Given a bin-size B, the intervals formed will be of the form:   
+We set different values of the bin-size in our following experiments. Given a bin-size B and a bin number x, the intervals formed will be of the form:   
     
 [x * B * 1e^6 , (x+1) * B * 1e^6], where x = 0, 1, 2 ...
 
@@ -234,6 +234,8 @@ Using a bin size of 50, a y value equal to 1e^8 will get mapped to a value equal
 Whereas, Using a bin size of 300, the same value will get mapped to a value equal to 0.
 
 Thus, the value of bin-size is an important variable that can lead to different classification results. We experiment with different values of bin-size in the following sections.
+
+The significance of turning the revenue problem into a classification problem is that if we can get a high accuracy of predicting revenue for a specific bin size, we can tell customers that we can predict revenue at high accuracy within margins of error of +- bin size, or within bin-size intervals of revenue.
 
   
 ### SVM
