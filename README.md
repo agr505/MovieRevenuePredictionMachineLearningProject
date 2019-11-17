@@ -190,7 +190,7 @@ Closeup of Revenue Prediction with Feature Selection data as input
 
 ### (3). Results (Sanmesh)
 
-##### TABLES ( PLACEHOLDER DATA)
+##### TABLES
 
 ##### Classification 
 <p align="center">
