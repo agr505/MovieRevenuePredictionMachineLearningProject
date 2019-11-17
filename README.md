@@ -1,4 +1,4 @@
-# Project title: Movie Revenue Prediction
+﻿# Project title: Movie Revenue Prediction
 ## Team members: Sanmesh, Aaron, Tarushree, Aastha, Prithvi, George
 
 ---
@@ -234,13 +234,13 @@ Closeup of Revenue Prediction with Feature Selection data as input
 ##### TABLES ( PLACEHOLDER DATA)
 
 ##### Classification 
-|                        |          |                    F1 SCORE                                 |                   ACCURACY                                  |
-|------------------------|----------|--------------------|--------------------|-------------------|--------------------|--------------------|-------------------|
-| Models                 | Features | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) |
-| Support Vector Machine |          |                    |                    |                   |                    |                    |                   |
-| Support Vector Machine |          |                    |                    |                   |                    |                    |                   |
-| Random Forest          |          |                    |                    |                   |                    |                    |                   |
-| Random Forest          |          |                    |                    |                   |                    |                    |                   |
+|                        |              |     F1 SCORE       |      F1 SCORE      |      F1 SCORE     |      ACCURACY      |      ACCURACY      |      ACCURACY     |
+|------------------------|--------------|--------------------|--------------------|-------------------|--------------------|--------------------|-------------------|
+| Models                 | Features     | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) |
+| Support Vector Machine | XGBRegressor | 0.8558             | 0.5302             | 0.3562            | 0.8770             | 0.6044             | 0.4356            |
+| Support Vector Machine | PCA          | 0.8111             | 0.5334             | 0.3562            | 0.8711             | 0.6104             | 0.4356            |
+| Random Forest          | XGBRegressor | 0.8598             | 0.5661             | 0.3765            | 0.8874             | 0.6326             | 0.4489            |
+| Random Forest          | PCA          | 0.8635             | 0.5709             | 0.3787            | 0.8904             | 0.6341             | 0.4533            |
 
 ##### Regression
 | Models           | RMSE | R^2 |
