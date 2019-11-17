@@ -9,7 +9,7 @@
 # 1. Overview of the project and Motivation 
 ### Motivation: 
 
-The motivation for this project was to understand why some movies are successful in the box office and why other movies perform poorly. Understanding which components of the movie production and distribution process correlate with high box office revenue can have great value for movie production companies by allowing for the production of higher quality movies and distributed to theatres at more optimal release dates. 
+The motivation for this project was to understand why some movies are successful in the box office and why other movies perform poorly. Understanding which components of the movie production and distribution process correlate with high box office revenue can have great value for movie production companies by allowing for the production of higher quality movies and distributed to theatres at more optimal release dates.      
 We aim to find the parameters in the data which are most correlated with film revenue, and to use the most important parameters in various classification and regression predictive models to predict film revenue.
 
 ---
