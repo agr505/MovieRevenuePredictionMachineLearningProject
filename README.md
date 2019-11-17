@@ -266,22 +266,10 @@ What is interesting is that the PCA data with normalization performed worse than
 
 ### SVM 
 
-<p align="center">
-  <img src="PrithviCodes/BinVSF1SVM_2.png" >
-</p>
-<p align="center">
-  <img src="PrithviCodes/Scatter_predVSActual.png" >
-</p>
-
-<p align="center">
-  <img src="PrithviCodes/plots/Line_chart_C_f1score.png" >
-</p>
-<p align="center">
-  <img src="PrithviCodes/plots/Line_chart_gamma_f1score.png" >
-</p>
-
 ### Random Forest
-
+<p align="center">
+  <img src="Figures/RandomForest_Depth_300_Interval.png" >
+</p>
 
 # 7. Final Conclusions
  
