@@ -99,11 +99,11 @@ We sorted movies into appropriate bin size ($100 million) to view the frequency 
 #### Steps followed for Data cleaning & Data pre-processing:
 The data cleaning and data pre-processing step includes:
 - Removal of dirty data such as data points with missing revenues (the feature of highest importance for our task)
-- Removal of rows with zero Revenue
 - Adjusting revenue for inflation
-- Separation of the year into Year and day of the year, since we theorize that the film revenue will be highly correlated with which season the movie is released in.
+- Separation of the Date into Year and day of the year, since we theorize that the film revenue will be highly correlated with which season the movie is released in.
 - Encoding categorical features: conversion of data into binary format.
   - Different classes in a column (Lists) allotted their column, and each row will indicate if column existed or not by assigning either a 1 or a 0.
+  - Example: If Stan Lee is present in a list of producers: then there will now be a column 'Stan Lee' with 1 or 0, depending on whether Stan Lee was a producer for that movie. 
 - Data was then divided into Test Validation and Training sets (60%, 20%, and 20%) for further model training and testing.
 
 
