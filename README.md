@@ -18,29 +18,14 @@ In the process of our analysis, we also aim to find the variables most associate
 ### (1). Dataset: The Movies DataBase (TMDB) 5000 Movie Dataset (from Kaggle)
 #### Features in the dataset: 24 features in total &nbsp;&nbsp;&nbsp;
 <!--
-1. ID    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. movie_id
-3. title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. cast
-5. crew
-6. budget
-7. genres
-8. homepage
-9. id
-10. keywords
-11. original_language
-12. original_title
-13. overview
-14. popularity
-15. production_companies
-16. production_countries
-17. release_date
-18. revenue
-19. runtime
-20. spoken_languages
-21. status
-22. tagline
-23. title
-24. vote_average
-25. vote_count  
+1. budget    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. genres
+3. keywords &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. production companies
+5. release date
+6. runtime
+7. spoken_languages
+8. status
+9. cast
+10. crew  
 -->
 <table>
 
