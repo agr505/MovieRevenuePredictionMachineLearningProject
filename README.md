@@ -87,7 +87,8 @@ We aim to find the variables most associated with film revenue, and to see how t
 </table>
 
 #### Visualization: 
-Binning movies into Revenue bins of 100 Million
+Preliminary visualization to see the distribution of revenue's of the Movies we are studying.
+We sorted movies into appropriate bin size ($100 million) to view the frequency of movies belonging to each bin size.
 <p align="center">
   <img src="PrithviCodes/RevenueVSCount.png">
 </p>
