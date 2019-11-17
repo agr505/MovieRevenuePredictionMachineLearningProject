@@ -144,14 +144,17 @@ The data sets were the two PCA data sets, and the feature selection dataset ment
 
 ### (1). PCA No scaling, 20 components
 RMSE: 160266397.7589437  
+Normalized RMSE: 0.050410109822282445    
 R2 score 0.49805732362034183  
 
 ### (2). PCA Scaling,99% variance recovery:
 RMSE: 225957444.3019453  
+Normalized RMSE: 0.07107253761050907  
 R2 score 0.00224829444458019  
 
 ### (3). Feature Selection:
 RMSE: 126001088.6944168  
+Normalized RMSE: 0.03963231723948973   
 R2 score 0.6897457309459162  
 
 Comparing RMSE and R2 of Ridge Regression on Three Input Data
@@ -200,7 +203,7 @@ Closeup of Revenue Prediction with Feature Selection data as input
 ##### Regression
 | Models           | RMSE | R^2 |
 |------------------|:----:|----:|
-| Ridge Regression |   3  |   1 |
+| Ridge Regression |   126001088  |   0.6897457309459162 |
 
 #####  PLOTS & CHARTS
 
