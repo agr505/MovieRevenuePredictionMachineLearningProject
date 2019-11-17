@@ -251,7 +251,7 @@ Another possible avenue to explore for this class imbalance problem with SVM wou
 
 #### Random Forest
 
-<p> We used Random Forest as another classification model inorder to classify the movie data into correct Revnue category. We have experimented with a some parameters like number of estimators and maximum depth parameters for the Random Forest model.
+<p> We used Random Forest as another classification model inorder to classify the movie data into correct Revnue category. We have experimented with a some parameters like number of estimators and maximum depth parameters for the Random Forest model.</p>
   
 
 #### Number of Estimators
@@ -322,7 +322,7 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.
 
 
      
-     
+
 <p align="center">Bin size = 100</p>
 
 <p align="center">
