@@ -9,8 +9,17 @@ import matplotlib.pyplot as plt
 
 import pandas as pd
 
+# for 300 intervalls 
+'''
 ytest = np.load('actualvalues.npy')
 ypred = np.load('predictedvalues.npy')
+'''
+# for 100 intervals
+#'''
+ytest = np.load('actualvalues_100interval_SVM_Correct.npy')
+ypred = np.load('predictedvalues_100interval_SVM_Correct.npy')
+#'''
+
 # xval = np.load('Xvalues.npy')
 
 
@@ -20,7 +29,7 @@ ytestSorted = ytest[sortedIndices]
 ypredSorted = ypred[sortedIndices]
 
 
-binW = 300
+binW = 100   #change
 
 ytestSorted = ytestSorted*binW+binW
 ypredSorted = ypredSorted*binW+binW
@@ -39,9 +48,9 @@ plt.legend(loc='upper left');
 
 #plt.yticks(range(len(ypredSorted)), [val for val in ypredSorted])
 
-plt.title("Actual Revenue vs Predicted Revenue, sorted by Actual Revenue (SVM)")
+plt.title("Actual Revenue vs Predicted Revenue (SVM) Bin Size: 100")
 plt.xlabel("Particular x data point")
 plt.ylabel("Revenue (Million $)")
 
-plt.savefig('Scatter_predVSActual.png')
-#plt.show()
+plt.savefig('Scatter_predVSActual100.png')
+plt.show()

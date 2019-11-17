@@ -268,8 +268,12 @@ What is interesting is that the PCA data with normalization performed worse than
 <p align="center">
   <img src="PrithviCodes/BinVSF1SVM_2.png" >
 </p>
-<p align="center">
-  <img src="PrithviCodes/Scatter_predVSActual.png" >
+<p align="left">
+  <img src="PrithviCodes/Scatter_predVSActual.png" style="width:50%" >
+</p>
+
+<p align="right">
+  <img src="PrithviCodes/Scatter_predVSActual100.png" style="width:50%" >
 </p>
 
 <p align="center">
