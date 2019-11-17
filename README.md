@@ -8,8 +8,8 @@
 
 # 1. Overview of the project and Motivation 
 ### Motivation: 
-To goal of our project is to predict the Box office revenue of a movie based on it's characteristics. 
-Our analysis will not only allow Directors/Producers to predict how much money their movie will make, but it will also allow them to justify their movie characteristics, such as movie budget and choice of actors in order to reach a certain revenue. Directors/Producers can also understanda what to modify in their selection of actors or investment in the movies to maximize their profit. Such analysis will also allow other interested third parties to predict the success of a film before it is released.      
+The goal of our project is to predict the Box office revenue of a movie based on it's characteristics. 
+Our analysis will not only allow Directors/Producers to predict how much money their movie will make, but it will also allow them to justify their movie characteristics, such as movie budget and choice of actors in order to reach a certain revenue. Directors/Producers can also understands what to modify in their selection of actors or investment in the movies to maximize their profit. Such analysis will also allow other interested third parties to predict the success of a film before it is released.      
 In the process of our analysis, we also aim to find the variables most associated with film revenue, and to see how the various revenue prediction models are affected by them.
 
 ---
