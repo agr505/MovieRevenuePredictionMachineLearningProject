@@ -81,7 +81,7 @@ Reduced # features: 20
 Recovered Variance Plot Below for PCA_noScale_20Comp%    
 Note: Huge first principal component is probably due to othe feature of budget, which is much bigger than all other features (average = 40,137,051.54)  
 <p align="center">
-  <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/SanmeshCodes/Figures/20CompPCAGraph.png" width="400"/>
+  <img src="SanmeshCodes/Figures/20CompPCAGraph.png" width="400"/>
 </p>
 
 #### PCA_Scale_99%VarRecov DETAILS
