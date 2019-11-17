@@ -9,7 +9,7 @@
 # 1. Overview of the project and Motivation 
 ### Motivation: 
 
-The motivation for this project was to understand why some movies are successful in the box office and why other movies perform poorly. Understanding which components of the movie production and distribution process correlate with high box office revenue can have great value for movie production companies by allowing for the production of higher quality movies and distributed to theatres at more optimal release dates. 
+The motivation for this project was to understand why some movies are successful in the box office and why other movies perform poorly. Understanding which components of the movie production and distribution process correlate with high box office revenue can have great value for movie production companies by allowing for the production of higher quality movies and distributed to theatres at more optimal release dates.      
 We aim to find the parameters in the data which are most correlated with film revenue, and to use the most important parameters in various classification and regression predictive models to predict film revenue.
 
 ---
@@ -285,6 +285,14 @@ What is interesting is that the PCA data with normalization performed worse than
   <img src="PrithviCodes/plots/Line_chart_gamma_f1score.png" >
 </p> 
 
+<p align="center">
+  <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
+</p> 
+
+<p align="center">
+  <img src="Figures/SVM_100_Norm_ConfusionMat.png" >
+</p> 
+
 ### Random Forest
 <p align="center">
   <img src="Figures/RandomForest_Depth_300_Interval.png" >
@@ -292,6 +300,15 @@ What is interesting is that the PCA data with normalization performed worse than
 <p align="center">
   <img src="Figures/RandomForest_NumberofEstimators_300_Interval.png" >
 </p>
+
+<p align="center">
+  <img src="Figures/RF_300_Norm_ConfusionMat.png" >
+</p> 
+
+<p align="center">
+  <img src="Figures/RF_100_Norm_ConfusionMat.png" >
+</p> 
+
 # 7. Final Conclusions
  
 
