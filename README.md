@@ -49,7 +49,7 @@ We aim to find the variables most associated with film revenue, and to see how t
 <p align="center">
   <img src="https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/RevenueVSCount.png">
 </p>
-
+![](https://github.com/agr505/MovieRevenuePredictionMachineLearningProject/blob/master/PrithviCodes/RevenueVSCount.pn | width=400)
 
 ---
 # 3. Data pre-processing
