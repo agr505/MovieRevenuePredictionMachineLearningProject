@@ -288,7 +288,7 @@ What is interesting is that the PCA data with normalization performed worse than
 
 ### Random Forest
 <p align="center">
-  <img src="Tarushree_RF plots/F1VsDepth_300.png" >
+  <img src="Tarushree_RF plots/F1VsDepth_300.png" height="300" width="300">
 </p>
 <p align="center">
   <img src="Tarushree_RF plots/F1VsEst_300.png" >
@@ -296,7 +296,7 @@ What is interesting is that the PCA data with normalization performed worse than
 <p align="center">
   <img src="Tarushree_RF plots/F1VsDepth_100.png" >
 </p>
-<p align="center">
+<p align="center"> 
   <img src="Tarushree_RF plots/F1VsEst_100.png" >
 </p>
 <p align="center">
