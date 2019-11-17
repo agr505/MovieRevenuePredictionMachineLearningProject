@@ -347,8 +347,7 @@ We have plotted our Random Forest classification results for both bin sizes as c
 <p align="center">
   <img src="Figures/RF_100_Norm_ConfusionMat.png" >
 </p>
-With random forest, we see improved classification as compared to SVM and overall accuracy is also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.
-
+With random forest, we see improved classification as compared to SVM and overall accuracy is also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.  
 
 # 7. Final Conclusions
 
@@ -365,8 +364,7 @@ With random forest, we see improved classification as compared to SVM and overal
 </p>
 
 Overall, for dataset dimension reduction, feature selection worked the best across all the supervised learning algorithms.  Ridge regression showed promising results in predicting the revenue, with a R^2 value of 0.69, which is within the range of 0.6 to 0.9, indicating a good model according to [1]. For our classfication models SVM and Random forest two bin sizes (100 million and 300 million) were experimented with and we achieve higher accuracy with the bigger - 300 bin size. However, both SVM and Random Forest are affected by the class imbalance problem in the training data.
-      
-      
+  
 # 8. Reference
 <ol>
 <li>What makes a successful film? Predicting a film’s revenue and user rating with machine learning. (2019). Retrieved 28 September 2019, from https://towardsdatascience.com/what-makes-a-successful-film-predicting-afilms-revenue-and-user-rating-with-machine-learning-e2d1b42365e7
