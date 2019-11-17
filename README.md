@@ -108,7 +108,7 @@ Binning movies into Revenue bins of 100 Million
 ---
 # 4. Feature Reduction 
 
-Our data has 10955 features, which is huge, especially in relation to the 3376 data points. To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required. To achieve this, PCA and feature selection were pursued.
+Our data has 10,955 features, which is huge, especially in relation to the 3376 data points. To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required. To achieve this, PCA and feature selection were pursued.
  
 ### (1). PCA (Sanmesh)
  
@@ -254,13 +254,13 @@ The ranking of the input data that gave the highest R^2 scores and lowest RMSE v
 2. PCA No scaling, 20 components  
 3. PCA Scaling, 99% variance recovery
 
-Feature Selection gave us the best performance for ridge regression. Our target R^2 value to indicate a good model is 0.6 to 0.9, according to this literature (https://towardsdatascience.com/what-makes-a-successful-film-predicting-a-films-revenue-and-user-rating-with-machine-learning-e2d1b42365e7), and this is acheived only through the feature selection data input with ridge regression. Thus we deam ridge regression model with feature selection input as a success in predicting movie revenue.
+Feature Selection gave us the best performance for ridge regression. Our target R^2 value to indicate a good model is 0.6 to 0.9, according to this literature [1], and this is acheived only through the feature selection data input with ridge regression. Thus we deam ridge regression model with feature selection input as a success in predicting movie revenue.
 
 We can see that for feature selection input, there is bigger error in prediction for bigger test revenues. The predicted revenue plot does have a similar shape to the actual revenue, this showing that the prediction values are trying to follow the actual values. However, the predicted value is not able to keep up with the increase of the actual revenue. This may be because there is a smaller % of actual revenues that are bigger. This may be corrected by having a bigger dataset to train on than only having 3376 samples. 
 
 It isn't clear completely why feature selection performs better than PCA, but one factor may be that some features are just an actor name, with values only binary 1 or 0 indicating whether the actor is in the movie. So maybe because there are very limited values, it is better to get rid of some of these features through feature selection, rather than transforming these features into new components through PCA. Maybe in the future, we will look into other methods of encoding the feature of actors into numerical data. One potential example is having one feature for all actors, and just encoding the actors into a numerical value from 0 to the # of actors.
   
-What is interesting is that the PCA data with normalization performed worse than the PCA without normalization. It is counterintuitive because the goal of PCA is to identify the axis with the most variance, and this goal may be impeded when one feature has much bigger values than other features (in our case, the feature is budget). However, the non-normalized PCA might have performed better because the data captures the budget mainly in the first principal component. We see from our correlation graphs and other literature (https://towardsdatascience.com/what-makes-a-successful-film-predicting-a-films-revenue-and-user-rating-with-machine-learning-e2d1b42365e7) that budget is one of the leading indicators to predicting movie revenue, so it makes sense that when using PCA data without normalization, it will perform better than pca with normalization. 
+What is interesting is that the PCA data with normalization performed worse than the PCA without normalization. It is counterintuitive because the goal of PCA is to identify the axis with the most variance, and this goal may be impeded when one feature has much bigger values than other features (in our case, the feature is budget). However, the non-normalized PCA might have performed better because the data captures the budget mainly in the first principal component. We see from our correlation graphs and other literature [1] that budget is one of the leading indicators to predicting movie revenue, so it makes sense that when using PCA data without normalization, it will perform better than pca with normalization. 
 
 # 6. Classification Models ()
 
@@ -286,6 +286,22 @@ What is interesting is that the PCA data with normalization performed worse than
   <img src="PrithviCodes/plots/Line_chart_gamma_f1score.png" >
 </p> 
 
+<<<<<<< Updated upstream
+=======
+We have plotted our depicted our SVM classification results for both bin sizes below:
+<p align="center">
+  <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
+</p> 
+
+<p align="left">
+  <img src="Figures/SVM_100_Norm_ConfusionMat.png" >
+</p> 
+
+Although we have achieved high accuracy and F1-score, we see from the confusion matrix that majority of our test instances are predicted to be in bin 0 or 1. This can be explained by class imbalance in the training data. There are more number of examples which belong to class 0 and 1 as compared to other categories. To overcome this challenge, we explored Random Forest which performs better with class imbalance in training data.
+
+Another possible avenue to explore for this class imbalance problem with SVM would be to increase the penalty for misclassifying minority classes. This could be done by inversely weighing 'C' with class size. This could be explored in future.
+
+>>>>>>> Stashed changes
 ### Random Forest
 <p align="center">
   <img src="Tarushree_RF plots/F1VsDepth_300.png" >
@@ -316,5 +332,6 @@ What is interesting is that the PCA data with normalization performed worse than
  
 
 # 8. Reference
+[1] What makes a successful film? Predicting a film’s revenue and user rating with machine learning. (2019). Retrieved 28 September 2019, from https://towardsdatascience.com/what-makes-a-successful-film-predicting-afilms-revenue-and-user-rating-with-machine-learning-e2d1b42365e7 
 
 
