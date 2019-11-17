@@ -178,11 +178,8 @@ To determine threshold for cutoff for feature selection
 
 ### Linear ridge regression (Sanmesh)
 
-<<<<<<< Updated upstream
-First, we tried to predict the exact revenue of the test set of movies using linear ridge regression. Ridge regression was chosen because it would it would protect against overfitting of the data, especially when there are a huge number of features. 
-=======
+
 First, we tried to predict the exact revenue of the test set of movies using linear ridge regression. Ridge regression was chosen because it would protect against overfitting of the data, especially when there are huge number of features. 
->>>>>>> Stashed changes
 Cross validation was performed to find the optimal alpha or regularization value.
 The data sets were the two PCA data sets, and the feature selection dataset mentioned previously. Ridge Regression was trained on 80% of each data set, and then finally tested on the remaining 20% of the data sets.  The results are below.
 
@@ -206,11 +203,7 @@ Comparing RMSE and R2 of Ridge Regression on Three Input Data
   <img src="SanmeshCodes/Figures/RidgeRegressionR%5E2.PNG">
 </p>
 
-<<<<<<< Updated upstream
-The plots below are the predicted vs actual revenue predicted from Ridge Regression. The data was sorted by the actual y values in order to make it easier to view the results. Alpha was determined through kfold method and was 0.5 for feature selection.  
-=======
 The plots below are the predicted revenue vs actual revenue from Ridge Regression. The data was sorted by the actual y revenue values in order to make it easier to view the results. Alpha was determined through kfold method (Leave-one-out cross validation) and was 0.5 for feature selection.  
->>>>>>> Stashed changes
 
 Revenue Prediction with PCA_noScale_20Comp data as input
 <p align="center">
