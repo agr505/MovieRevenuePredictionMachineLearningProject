@@ -237,11 +237,11 @@ First we kept Gamma constant at its default value of ‘auto’ for the Sklearn 
   <img src="PrithviCodes/BinVSF1SVM_2.png" >
 </p>
 <p align="center">
-  <img src="PrithviCodes/Scatter_predVSActual.png" style="width:50%" >
+  <img src="PrithviCodes/Scatter_predVSActual.png" >
 </p>
 
 <p align="center">
-  <img src="PrithviCodes/Scatter_predVSActual100.png" style="width:50%" >
+  <img src="PrithviCodes/Scatter_predVSActual100.png" >
 </p>
 
 <p align="center">
