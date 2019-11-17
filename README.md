@@ -27,8 +27,7 @@ We aim to find the variables most associated with film revenue, and to see how t
 9. cast
 10. crew  
 -->
-<table>
-
+<table>c
   <tr>
     <td>ID</td>
     <td>Title</td>
@@ -362,14 +361,21 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.
   <img src="Tarushree_RF plots/Scatter_RF_100.png" height="500" width="600">
 </p>
 
+<br><br>
+<h3>Visualizing F1 score & Accuracy</h3>
+<br><br>
+In the bar graph below, we have plotted the F1 scores and accuracy versus different bin sizes used for categorizing the output label, that is Revenue.
 
+We used 3 bin sizes - 50, 100 and 300. For each bin size, we used Cross Validation to choose the best values of number of estimators and maximum depth parameters.
+After finding the best values of the 2 parameters, we generated F1 score and accuracy on the test dataset.
 
-
-
+We observed that we get the highest F1 score and accuracy in case of 300 bins. This observation is in accordance to the error visualization graphs presented above that show the lest error in case lof 300 bins.
 
 <p align="center">
   <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png" height="500" width="600">
 </p>
+
+
 
 We have plotted our Random Forest classification results for both bin sizes as confusion matrices below:
 <p align="center">
