@@ -96,13 +96,14 @@ Binning movies into Revenue bins of 100 Million
 ---
 # 3. Data pre-processing
 #### Steps followed for Data cleaning & Data pre-processing:
-- Removal of data points with missing revenues
-- Removing zero REVENUES from the data 
-- Adjusting revenue for inflation.
-- Separation of year into Year and day of the year, since we theorized that film revenue will be highly correlated with which season the movie is released in.
+The data cleaning and data pre-processing step includes:
+- Removal of dirty data such as data points with missing revenues (the feature of highest importance for our task)
+- Removal of rows with zero Revenue
+- Adjusting revenue for inflation
+- Separation of the year into Year and day of the year, since we theorize that the film revenue will be highly correlated with which season the movie is released in.
 - Encoding categorical features: conversion of data into binary format.
-  - Different classes in a column (Lists) allotted their own column, and each row will indicate if column existed or not by assigning either a 1 or a 0. 
-- Data was then divided into Test Validation and Training sets (60%, 20% and 20%) for further model training and testing.
+  - Different classes in a column (Lists) allotted their column, and each row will indicate if column existed or not by assigning either a 1 or a 0.
+- Data was then divided into Test Validation and Training sets (60%, 20%, and 20%) for further model training and testing.
 
 
 ---
