@@ -128,7 +128,6 @@ To determine threshold for cutoff for feature selection
 
 
 
-
 # 5. Movie Revenue Prediction 
 
 ## Experiments and Model Testing
@@ -209,7 +208,26 @@ What is interesting is that the PCA data with normalization performed worse than
 
 
 ### Binning of Y Revenue values 
+  
+To be able to classify movies into different categories of revenue, we needed to bin the prediction class into various intervals.
 
+We set different values of the bin-size in our following experiments. Given a bin-size B, the intervals formed will be of the form:   
+    
+[x * B * 1e^6 , (x+1) * B * 1e^6], where x = 0, 1, 2 ...
+
+The below formula is used to categorize the Y values:
+
+y' = y / (B * 1e^6), where y is the actual revenue value and y' is the integer value after binning.
+
+The value of B determines how the y values will get combined. 
+
+e.g:    
+Using a bin size of 50, a y value equal to 1e^8 will get mapped to a value equal to 2.
+Whereas, Using a bin size of 300, the same value will get mapped to a value equal to 0.
+
+Thus, the value of bin-size is an important variable that can lead to different classification results. We experiment with different values of bin-size in the following sections.
+
+  
 ### SVM
 We used Support Vector Machine as a classification model in order to classify the movie data into the correct revenue category. The data is not linearly separable. We were able to get the best performance with the Radial Basis Function kernel. We have experimented with different hyperparameters including gamma, the kernel coefficient, and C the regularization parameter. We found the optimal values for the hyperparameters by using 3-Fold Cross Validation with F1 score as the metric. We used a specific F1 score variation that first calculated the metrics for each class and then found their average weighted by the number of true instances for each class. We needed to use this because of our class imbalance. 
 
@@ -355,7 +373,7 @@ We have plotted our Random Forest classification results for both bin sizes as c
 With random forest, we see improved classification as compared to SVM and overall accuracy is also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.  
 
 
-# 7 Final Conclusions (still testing7)  
+# 7 Final Conclusions  
 
 ##### TABLES
 
