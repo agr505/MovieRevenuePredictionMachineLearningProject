@@ -288,25 +288,25 @@ What is interesting is that the PCA data with normalization performed worse than
 
 ### Random Forest
 <p align="center">
-  <img src="Tarushree_RF plots/F1VsDepth_300.png" height="300" width="300">
+  <img src="Tarushree_RF plots/F1VsDepth_300.png" height="500" width="500">
 </p>
 <p align="center">
-  <img src="Tarushree_RF plots/F1VsEst_300.png" >
+  <img src="Tarushree_RF plots/F1VsEst_300.png" height="500" width="500">
 </p>
 <p align="center">
-  <img src="Tarushree_RF plots/F1VsDepth_100.png" >
+  <img src="Tarushree_RF plots/F1VsDepth_100.png" height="500" width="500">
 </p>
 <p align="center"> 
-  <img src="Tarushree_RF plots/F1VsEst_100.png" >
+  <img src="Tarushree_RF plots/F1VsEst_100.png" height="500" width="500">
 </p>
 <p align="center">
-  <img src="Tarushree_RF plots/Scatter_RF_300.png" >
+  <img src="Tarushree_RF plots/Scatter_RF_300.png" height="500" width="500">
 </p>
 <p align="center">
-  <img src="Tarushree_RF plots/Scatter_RF_100.png" >
+  <img src="Tarushree_RF plots/Scatter_RF_100.png" height="500" width="500">
 </p>
 <p align="center">
-  <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png" >
+  <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png" height="500" width="500">
 </p>
 
 
