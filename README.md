@@ -320,7 +320,7 @@ We choose the n_estimators parameter corresponding to the highest F1 score value
 Below are the graphs for 2 different Bin sizes - 100 and 300.</p>
 
 <br><br>
-<p style="text-align:center;">Bin size = 300</p>
+<p align="center">Bin size = 300</p>
 <p align="center">
   <img src="Tarushree_RF plots/F1VsEst_300.png" height="500" width="600">
 </p>
