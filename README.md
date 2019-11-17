@@ -188,21 +188,6 @@ Closeup of Revenue Prediction with Feature Selection data as input
   <img src="SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtestCloseup_xgbFeatures.png">
 </p>
 
-### (3). Results (Sanmesh)
-
-##### TABLES
-
-##### Classification 
-<p align="center">
-  <img src="PrithviCodes/plots/Classification_results.png">
-</p>
-
-##### Regression
-<p align="center">
-  <img src="PrithviCodes/plots/Regression_results.png">
-</p>
-
-
 
 ------------
 
@@ -365,6 +350,19 @@ With random forest, we see improved classification as compared to SVM and overal
 
 
 # 7. Final Conclusions
+
+##### TABLES
+
+##### Classification 
+<p align="center">
+  <img src="PrithviCodes/plots/Classification_results.png">
+</p>
+
+##### Regression
+<p align="center">
+  <img src="PrithviCodes/plots/Regression_results.png">
+</p>
+
 Overall, for dataset dimension reduction, feature selection worked the best across all the supervised learning algorithms.  Ridge regression showed promising results in predicting the revenue, with a R^2 value of 0.69, which is within the range of 0.6 to 0.9, indicating a good model according to [1]. For our classfication models SVM and Random forest two bin sizes (100 million and 300 million) were experimented with and we achieve higher accuracy with the bigger - 300 bin size. However, both SVM and Random Forest are affected by the class imbalance problem in the training data.
 
 
