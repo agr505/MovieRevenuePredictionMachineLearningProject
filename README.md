@@ -192,22 +192,15 @@ Closeup of Revenue Prediction with Feature Selection data as input
 ##### TABLES ( PLACEHOLDER DATA)
 
 ##### Classification 
-|                        |          |                    F1 SCORE                                 |                   ACCURACY                                  |
-|------------------------|----------|--------------------|--------------------|-------------------|--------------------|--------------------|-------------------|
-| Models                 | Features | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) |
-| Support Vector Machine |          |                    |                    |                   |                    |                    |                   |
-| Support Vector Machine |          |                    |                    |                   |                    |                    |                   |
-| Random Forest          |          |                    |                    |                   |                    |                    |                   |
-| Random Forest          |          |                    |                    |                   |                    |                    |                   |
+<p align="center">
+  <img src="PrithviCodes/plots/Classification_results.png">
+</p>
 
 ##### Regression
-| Models           | RMSE | R^2 |
-|------------------|:----:|----:|
-| Ridge Regression |   126001088  |   0.6897457309459162 |
+<p align="center">
+  <img src="PrithviCodes/plots/Regression_results.png">
+</p>
 
-#####  PLOTS & CHARTS
-
-ToDo
 
 
 ------------
