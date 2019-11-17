@@ -279,7 +279,6 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.</p>
   <img src="Tarushree_RF plots/F1VsEst_100.png" height="500" width="600">
 </p>
 
-<p>
 
 
 #### Maximum Depth of the Trees
