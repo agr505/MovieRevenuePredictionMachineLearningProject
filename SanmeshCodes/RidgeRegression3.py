@@ -106,7 +106,7 @@ ax2.scatter(x,ypredSorted, s=10, c='r', marker="o", label='Predicted Revenue')
 plt.errorbar(x, (ytestSorted+ypredSorted)/2, yerr=np.abs(ytestSorted-ypredSorted)/2, xlolims=True, label='error bar', fmt = ',')
 plt.legend(loc='upper left');
 plt.title("Test Actual vs Predicted Revenue, sorted by Actual Revenue")
-plt.xlabel("Particular x data point from PCA 99")
+plt.xlabel("Particular x data point from pcaOutputScalingNum99Perc")
 plt.ylabel("Revenue")
 
 
