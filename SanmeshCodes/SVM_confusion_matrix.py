@@ -20,6 +20,7 @@ def plot_confusion_matrix(y_true, y_pred, classes,normalize=False,title=None,cma
         print("Normalized confusion matrix")
     else:
         print('Confusion matrix, without normalization')
+    cm=np.nan_to_num(cm)
     print(cm)
     fig, ax = plt.subplots()
     im = ax.imshow(cm, interpolation='nearest', cmap=cmap)
