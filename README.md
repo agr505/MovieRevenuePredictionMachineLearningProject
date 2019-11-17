@@ -81,7 +81,7 @@ Reduced # features: 20
 Recovered Variance Plot Below for PCA_noScale_20Comp%    
 Note: Huge first principal component is probably due to othe feature of budget, which is much bigger than all other features (average = 40,137,051.54)  
 <p align="center">
-  <img src="SanmeshCodes/Figures/20CompPCAGraph.png" width="400"/>
+  <img src="SanmeshCodes/Figures/20CompPCAGraph.png" >
 </p>
 
 #### PCA_Scale_99%VarRecov DETAILS
@@ -90,7 +90,7 @@ Original # features: 10955
 Reduced # features: 2965  
 Recovered Variance Plot Below for PCA_Scale_99%VarRecov  
 <p align="center">
-  <img src="SanmeshCodes/Figures/99PercRecovVarPCAGraph.png" width="400"/>
+  <img src="SanmeshCodes/Figures/99PercRecovVarPCAGraph.png" >
 </p>
 
 ### (2). Feature selection (Prithvi)
@@ -107,20 +107,20 @@ Once we visualized the graphs we then manually set a threshold and gathered 150 
 ##### Feature importances of encoded movie data
 ######  2000 features sorted by feature importance scores of XGBRegressor
 <p align="left">
-  <img src="PrithviCodes/plots/xgb_2000.png" width="400"/>
+  <img src="PrithviCodes/plots/xgb_2000.png" >
 </p>
 
 ###### 150 to 200 features feature importance scores of XGBRegressor
 
 To determine threshold for cutoff for feature selection
 <p align="left">
-  <img src="PrithviCodes/plots/xgb_150_200.png" width="400"/>
+  <img src="PrithviCodes/plots/xgb_150_200.png" >
 </p>
 
 ##### Top 25 Revenue predictors
 
 <p align="center">
-  <img src="PrithviCodes/plots/25_top_XGB.png" width="400"/>
+  <img src="PrithviCodes/plots/25_top_XGB.png" >
 </p>
 
 
@@ -145,32 +145,32 @@ R2 score 0.6897457309459162
 
 Comparing RMSE and R2 of Ridge Regression on Three Input Data
 <p align="center">
-  <img src="SanmeshCodes/Figures/RidgeRegressionRMSE.PNG" width="600"/>
+  <img src="SanmeshCodes/Figures/RidgeRegressionRMSE.PNG">
 </p>
 <p align="center">
-  <img src="SanmeshCodes/Figures/RidgeRegressionR%5E2.PNG" width="600"/>
+  <img src="SanmeshCodes/Figures/RidgeRegressionR%5E2.PNG">
 </p>
 
 The plots below are the predicted vs actual revenue predicted from Ridge Regression. The data was sorted by the actual y values in order to make it easier to view the results. Alpha was determined through kfold method and was 0.5 for feature selection.  
 
 Revenue Prediction with PCA_noScale_20Comp data as input
 <p align="center">
-  <img src="SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtest_PCA20Comp.png" width="600"/>
+  <img src="SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtest_PCA20Comp.png">
 </p>
   
 Revenue Prediction with PCA_Scale_99%VarRecov data as input
 <p align="center">
-  <img src="SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtest_PCA99PercVarRecov.png" width="600"/>
+  <img src="SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtest_PCA99PercVarRecov.png">
 </p>  
   
 Revenue Prediction with Feature Selection data as input
 <p align="center">
-  <img src="SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtest_xgbFeatures.png" width="600"/>
+  <img src="SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtest_xgbFeatures.png">
 </p>
 
 Closeup of Revenue Prediction with Feature Selection data as input
 <p align="center">
-  <img src="SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtestCloseup_xgbFeatures.png" width="600"/>
+  <img src="SanmeshCodes/Figures/ridgeRegressionPlotYPredVsYtestCloseup_xgbFeatures.png">
 </p>
 
 ### (3). Results (Sanmesh)
