@@ -8,9 +8,9 @@
 
 # 1. Overview of the project and Motivation 
 ### Motivation: 
-The goal of our project is to predict the Box office revenue of a movie based on it's characteristics. 
-Our analysis will not only allow Directors/Producers to predict how much money their movie will make, but it will also allow them to justify their movie characteristics, such as movie budget and choice of actors in order to reach a certain revenue. Directors/Producers can also understands what to modify in their selection of actors or investment in the movies to maximize their profit. Such analysis will also allow other interested third parties to predict the success of a film before it is released.      
-In the process of our analysis, we also aim to find the variables most associated with film revenue, and to see how the various revenue prediction models are affected by them.
+To predict the Box office revenue of a movie based on it's characteristics. 
+Our analysis will allow Directors/Producers to decide on what characteristics of the movie will affect their box office revenue, and what to modify in their selection of actors or investment in the movies to maximize their profit. Such analysis will also allow other interested third parties to predict the success of a film before it is released. 
+We aim to find the variables most associated with film revenue, and to see how the various revenue prediction models are affected by them.
 
 ---
 # 2. Dataset and visualization 
@@ -87,8 +87,7 @@ In the process of our analysis, we also aim to find the variables most associate
 </table>
 
 #### Visualization: 
-Preliminary visualization to see the distribution of revenue's of the Movies we are studying.
-We sorted movies into appropriate bin size ($100 million) to view the frequency of movies belonging to each bin size.
+Binning movies into Revenue bins of 100 Million
 <p align="center">
   <img src="PrithviCodes/RevenueVSCount.png">
 </p>
@@ -97,20 +96,19 @@ We sorted movies into appropriate bin size ($100 million) to view the frequency 
 ---
 # 3. Data pre-processing
 #### Steps followed for Data cleaning & Data pre-processing:
-The data cleaning and data pre-processing step includes:
-- Removal of dirty data such as data points with missing revenues (the feature of highest importance for our task)
-- Adjusting revenue for inflation
-- Separation of the Date into Year and day of the year, since we theorize that the film revenue will be highly correlated with which season the movie is released in.
+- Removal of data points with missing revenues
+- Removing zero REVENUES from the data 
+- Adjusting revenue for inflation.
+- Separation of year into Year and day of the year, since we theorized that film revenue will be highly correlated with which season the movie is released in.
 - Encoding categorical features: conversion of data into binary format.
-  - Different classes in a column (Lists) allotted their column, and each row will indicate if column existed or not by assigning either a 1 or a 0.
-  - Example: If Stan Lee is present in a list of producers: then there will now be a column 'Stan Lee' with 1 or 0, depending on whether Stan Lee was a producer for that movie. 
-- Data was then divided into Test Validation and Training sets (60%, 20%, and 20%) for further model training and testing.
+  - Different classes in a column (Lists) allotted their own column, and each row will indicate if column existed or not by assigning either a 1 or a 0. 
+- Data was then divided into Test Validation and Training sets (60%, 20% and 20%) for further model training and testing.
 
 
 ---
 # 4. Feature Reduction 
 
-Our data has 10,955 features, which is huge, especially in relation to the 3376 data points. To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required. To achieve this, PCA and feature selection were pursued.
+Our data has 10955 features, which is huge, especially in relation to the 3376 data points. To reduce the number of features to increase speed of running supervised learning algorithms for revenue prediction of the movies, feature reduction was deemed required. To achieve this, PCA and feature selection were pursued.
  
 ### (1). PCA (Sanmesh)
  
@@ -149,28 +147,17 @@ Once we visualized the graphs we then manually set a threshold and gathered 150 
 
 
 ##### Feature importances of encoded movie data
-After data encoding, we have 10,000+ columns/features. We used XGBRegressor to find the relative correlation of these features (feature importances) when compared to the Revenue.      
-We have shown the the plots of the feature importances for the various features sorted by feature importance scores of XGBRegressor.        
-Below we show the first 2000, of the sorted set of features.
+######  2000 features sorted by feature importance scores of XGBRegressor
 <p align="left">
   <img src="PrithviCodes/plots/xgb_2000.png" >
 </p>
 
-
-
-
-
 ###### 150 to 200 features feature importance scores of XGBRegressor
 
-To determine threshold for cutoff for feature selection: we've plotted close the low feature importance features (150 to 200), As shown below, the feature importance scores are lowest near the 160'th sorted feature. 
-This was used to set the threshold as 0.00020 for the feature importance scores, and therefore 156 features were obtained whose feature contribution was above that.      
-
+To determine threshold for cutoff for feature selection
 <p align="left">
   <img src="PrithviCodes/plots/xgb_150_200.png" >
 </p>
-
-
-To further illustrate the consequence of this, we've shown below the plot for the top 25 features and their feature importance scores. These are the factors, who's presence in the movie correlates to a high box office revenue.     
 
 ##### Top 25 Revenue predictors
 
@@ -191,23 +178,20 @@ To further illustrate the consequence of this, we've shown below the plot for th
 
 ### Linear ridge regression (Sanmesh)
 
-First, we tried to predict the exact revenue of the test set of movies using linear ridge regression. Ridge regression was chosen because it would protect against overfitting of the data, especially when there are a huge number of features. 
+First, we tried to predict the exact revenue of the test set of movies using linear ridge regression. Ridge regression was chosen because it would it would protect against overfitting of the data, especially when there are a huge number of features. 
 Cross validation was performed to find the optimal alpha or regularization value.
 The data sets were the two PCA data sets, and the feature selection dataset mentioned previously. Ridge Regression was trained on 80% of each data set, and then finally tested on the remaining 20% of the data sets.  The results are below.
 
 ### (1). PCA No scaling, 20 components
 RMSE: 160266397.7589437  
-Normalized RMSE: 0.050410109822282445  
 R2 score 0.49805732362034183  
 
 ### (2). PCA Scaling,99% variance recovery:
 RMSE: 225957444.3019453  
-Normalized RMSE: 0.07107253761050907  
 R2 score 0.00224829444458019  
 
 ### (3). Feature Selection:
 RMSE: 126001088.6944168  
-Normalized RMSE: 0.03963231723948973  
 R2 score 0.6897457309459162  
 
 Comparing RMSE and R2 of Ridge Regression on Three Input Data
@@ -218,7 +202,7 @@ Comparing RMSE and R2 of Ridge Regression on Three Input Data
   <img src="SanmeshCodes/Figures/RidgeRegressionR%5E2.PNG">
 </p>
 
-The plots below are the predicted vs actual revenue predicted from Ridge Regression. The data was sorted by the actual y revenue values in order to make it easier to view the results. Alpha was determined through kfold method and was 0.5 for feature selection.  
+The plots below are the predicted vs actual revenue predicted from Ridge Regression. The data was sorted by the actual y values in order to make it easier to view the results. Alpha was determined through kfold method and was 0.5 for feature selection.  
 
 Revenue Prediction with PCA_noScale_20Comp data as input
 <p align="center">
@@ -245,13 +229,13 @@ Closeup of Revenue Prediction with Feature Selection data as input
 ##### TABLES ( PLACEHOLDER DATA)
 
 ##### Classification 
-|                        |              |     F1 SCORE       |      F1 SCORE      |      F1 SCORE     |      ACCURACY      |      ACCURACY      |      ACCURACY     |
-|------------------------|--------------|--------------------|--------------------|-------------------|--------------------|--------------------|-------------------|
-| Models                 | Features     | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) |
-| Support Vector Machine | XGBRegressor | 0.8558             | 0.5302             | 0.3562            | 0.8770             | 0.6044             | 0.4356            |
-| Support Vector Machine | PCA          | 0.8111             | 0.5334             | 0.3562            | 0.8711             | 0.6104             | 0.4356            |
-| Random Forest          | XGBRegressor | 0.8598             | 0.5661             | 0.3765            | 0.8874             | 0.6326             | 0.4489            |
-| Random Forest          | PCA          | 0.8635             | 0.5709             | 0.3787            | 0.8904             | 0.6341             | 0.4533            |
+|                        |          |                    F1 SCORE                                 |                   ACCURACY                                  |
+|------------------------|----------|--------------------|--------------------|-------------------|--------------------|--------------------|-------------------|
+| Models                 | Features | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) |
+| Support Vector Machine |          |                    |                    |                   |                    |                    |                   |
+| Support Vector Machine |          |                    |                    |                   |                    |                    |                   |
+| Random Forest          |          |                    |                    |                   |                    |                    |                   |
+| Random Forest          |          |                    |                    |                   |                    |                    |                   |
 
 ##### Regression
 | Models           | RMSE | R^2 |
@@ -274,14 +258,14 @@ Feature Selection gave us the best performance for ridge regression. Our target 
 
 We can see that for feature selection input, there is bigger error in prediction for bigger test revenues. The predicted revenue plot does have a similar shape to the actual revenue, this showing that the prediction values are trying to follow the actual values. However, the predicted value is not able to keep up with the increase of the actual revenue. This may be because there is a smaller % of actual revenues that are bigger. This may be corrected by having a bigger dataset to train on than only having 3376 samples. 
 
-It isn't clear completely why feature selection performs better than PCA, but one factor may be that there are some features such as a particular actor name, with values only binary 1 or 0 indicating whether the actor is in the movie. So maybe PCA doesn't work as well on binary value features, and there is conflicting opinion on this online in the ML community. Maybe in the future, we will look into other methods of encoding the feature of actors into numerical data. One potential example is having one feature for all actors, and just encoding the actors into a numerical value from 0 to the # of actors.
+It isn't clear completely why feature selection performs better than PCA, but one factor may be that there are some features such as a particular actor name, with values only binary 1 or 0 indicating whether the actor is in the movie. So maybe PCA doesn't work as well on binary value features, and there is conflicting opinion on why this is the case in the community. Maybe in the future, we will look into other methods of encoding the feature of actors into numerical data. One potential example is having one feature for all actors, and just encoding the actors into a numerical value from 0 to the # of actors.
   
-What is interesting is that the PCA data with normalization performed worse than the PCA without normalization. It is counterintuitive because the goal of PCA is to identify the axis with the most variance, and this goal may be impeded when one feature has much bigger values than other features (in our case, the feature is budget). However, the non-normalized PCA might have performed better because the data captures the budget mainly in the first principal component. We see from our correlation graphs and other literature [1] that budget is one of the leading indicators to predicting movie revenue, so it makes sense that when using PCA data without normalization, it will perform better than pca with normalization. Also, some features being binary might also affect the normalization of the data. Also, the PCA normalization data that captured 99% variance had 2965 size, which is a huge amount of features relative to the 3376 data points, and thus might have led to more innacurate results than the PCA without scaling that had only 20 components.
+What is interesting is that the PCA data with normalization performed worse than the PCA without normalization. It is counterintuitive because the goal of PCA is to identify the axis with the most variance, and this goal may be impeded when one feature has much bigger values than other features (in our case, the feature is budget). However, the non-normalized PCA might have performed better because the data captures the budget mainly in the first principal component. We see from our correlation graphs and other literature [1] that budget is one of the leading indicators to predicting movie revenue, so it makes sense that when using PCA data without normalization, it will perform better than pca with normalization. 
 
 # 6. Classification Models ()
 
 
-### Binning of Y Revenue values 
+### Binning of Y values 
 
 ### SVM
 <p align="center">
@@ -303,55 +287,113 @@ What is interesting is that the PCA data with normalization performed worse than
 </p> 
 
 
-We have plotted our SVM classification results for both bin sizes as confusion matrices below:
+We have plotted our depicted our SVM classification results for both bin sizes below:
 <p align="center">
   <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
 </p> 
 
 <p align="left">
-  <img src="Figures/SVM_100_Norm_ConfusionMat2.png" >
+  <img src="Figures/SVM_100_Norm_ConfusionMat.png" >
 </p> 
 
 Although we have achieved high accuracy and F1-score, we see from the confusion matrix that majority of our test instances are predicted to be in bin 0 or 1. This can be explained by class imbalance in the training data. There are more number of examples which belong to class 0 and 1 as compared to other categories. To overcome this challenge, we explored Random Forest which performs better with class imbalance in training data.
 
 Another possible avenue to explore for this class imbalance problem with SVM would be to increase the penalty for misclassifying minority classes. This could be done by inversely weighing 'C' with class size. This could be explored in future.
 
+<br>
+<h2>Random Forest</h2>
+<br>
+<p> We used Random Forest as another classification model inorder to classify the movie data into correct Revnue category. We have experimented with a some parameters like number of estimators and maximum depth parameters for the Random Forest model.
+  
 
-### Random Forest
-<p align="center">
-  <img src="Tarushree_RF plots/F1VsDepth_300.png" height="500" width="600">
-</p>
+<h3>Number of Estimators</h3>
+
+Number of estimators are used to specify the number of trees in the forest. Generally, a higher n=value for the number of trees results in better learning and higher accuracy. But, adding a huge number of trees can make the training and inference process go slow. Hence, we have used a search method to find the best value of n_estimator.
+
+We experimented by fitting Random forest with trees having number of estimators ranging from 1 to 500. Then we plot the F1-score against the Depths.
+
+We observed that as we increase the number of estimators, the F1 score increases to attain its highest value and then it becomes almost constant as we keep increasing the number of estimators further.
+
+We choose the n_estimators parameter corresponding to the highest F1 score value to be the best value.
+
+Below are the graphs for 2 different Bin sizes - 100 and 300.</p>
+
+<br><br>
+<p style="text-align:center;">Bin size = 300</p>
 <p align="center">
   <img src="Tarushree_RF plots/F1VsEst_300.png" height="500" width="600">
 </p>
-<p align="center">
-  <img src="Tarushree_RF plots/F1VsDepth_100.png" height="500" width="600">
-</p>
+<br><br><br>
+<p style="text-align:center;">Bin size = 100</p>
 <p align="center"> 
   <img src="Tarushree_RF plots/F1VsEst_100.png" height="500" width="600">
 </p>
+
+<p>
+
+<br>
+<h3>Maximum Depth of the Trees</h3>
+
+Maximum Depth stands for the depth of each tree in the forest. More the depth of the tree, the more splits it has and more is the tendency to captures fine information about the data. 
+
+We experimented by fitting Random forest with trees having depths ranging from 1 to 250. Then we plot the F1-score against the Depths.
+
+We observed that as we increase the depth of the decision trees, the F1 score increases intitially. But as we keep increasing the depth further, the F1 score falls slightly and then it plateaus to attain a contant value.
+
+We choose the depth corresponding to the highest F1 score value to be the best Depth value.
+
+Below are the graphs for 2 different Bin sizes - 100 and 300.
+
+<br><br>
+<p style="text-align:center;">Bin size = 300</p>
+<p align="center">
+  <img src="Tarushree_RF plots/F1VsDepth_300.png" height="500" width="600">
+</p>
+<br><br>
+<p style="text-align:center;">Bin size = 100</p>
+<p align="center">
+  <img src="Tarushree_RF plots/F1VsDepth_100.png" height="500" width="600">
+</p>
+
+<br>
+<h3>Error Visualization</h3>
+<br><br>
+1. As there are more number of data points in later bins as compared to the initial bins, we see that the error is higher in later bins. <br><br>
+2. Also, we observed that the error is higher incase of 100 bins as compared to when we have 300 bins. This shows that having more number of classes is leading the model to clearly segregate the data by grouping the data points more efficiently.
+
+<br><br>
+<p style="text-align:center;">Bin size = 300</p>
+
 <p align="center">
   <img src="Tarushree_RF plots/Scatter_RF_300.png" height="500" width="600">
 </p>
+
+
+<br><br>
+<p style="text-align:center;">Bin size = 100</p>
+
 <p align="center">
   <img src="Tarushree_RF plots/Scatter_RF_100.png" height="500" width="600">
 </p>
+
+
+
+
+
+
 <p align="center">
   <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png" height="500" width="600">
 </p>
 
-We have plotted our Random Forest classification results for both bin sizes as confusion matrices below:
 
-<p align="center">
-  <img src="Figures/RF_300_Norm_ConfusionMat.png" >
-</p>
-<p align="left">
-  <img src="Figures/RF_100_Norm_ConfusionMat.png" >
-</p>
-
-With random forest, we see improved classification as compared to SVM and overall accuracy is also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.
 
 # 7. Final Conclusions
+
+sduqiwo
+
+
+Checking checking checking 
+ 
 
 
 # 8. Reference
