@@ -9,7 +9,7 @@
 # 1. Overview of the project and Motivation 
 ### Motivation: 
 The goal of our project is to predict the Box office revenue of a movie based on it's characteristics. 
-Our analysis will not only allow Directors/Producers to predict how much money their movie will make, but it will also allow them to justify their movie characteristics, such as movie budget and choice of actors in order to reach a certain revenue. Directors/Producers can also understands what to modify in their selection of actors or investment in the movies to maximize their profit. Such analysis will also allow other interested third parties to predict the success of a film before it is released.      
+Our analysis will not only allow Directors/Producers to predict how much money their movie will make, but it will also allow them to justify their movie characteristics, such as movie budget and choice of actors in order to reach a certain revenue. Directors/Producers can also understands what to modify in their selection of actors or investment in the movies to maximize their profit. Such analysis will also allow other interested third parties to predict the success of a film before it is released.                  
 In the process of our analysis, we also aim to find the variables most associated with film revenue, and to see how the various revenue prediction models are affected by them.
 
 ---
@@ -58,9 +58,10 @@ We sorted movies into appropriate bin size ($100 million) to view the frequency 
 - Removal of data points with missing revenues
 - Removing zero REVENUES from the data 
 - Adjusting revenue for inflation.
-- Separation of year into Year and day of the year, since we theorized that film revenue will be highly correlated with which season the movie is released in.
+- Separation of Date into Year and day of the year, since we theorized that film revenue will be highly correlated with which season the movie is released in.
 - Encoding categorical features: conversion of data into binary format.
   - Different classes in a column (Lists) allotted their own column, and each row will indicate if column existed or not by assigning either a 1 or a 0. 
+  - If Stan Lee is in the list of producers for any movie, then now 'Stan Lee' will become a binary feature. If a movie has Stan Lee as the producer the feature will be a 1, otherwise it'll be a 0.
 - Data was then divided into Test Validation and Training sets (60%, 20% and 20%) for further model training and testing.
 
 
@@ -189,25 +190,18 @@ Closeup of Revenue Prediction with Feature Selection data as input
 
 ### (3). Results (Sanmesh)
 
-##### TABLES ( PLACEHOLDER DATA)
+##### TABLES
 
 ##### Classification 
-|                        |          |                    F1 SCORE                                 |                   ACCURACY                                  |
-|------------------------|----------|--------------------|--------------------|-------------------|--------------------|--------------------|-------------------|
-| Models                 | Features | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) | Bin Size: 300$ (M) | Bin Size: 100$ (M) | Bin Size: 50$ (M) |
-| Support Vector Machine |          |                    |                    |                   |                    |                    |                   |
-| Support Vector Machine |          |                    |                    |                   |                    |                    |                   |
-| Random Forest          |          |                    |                    |                   |                    |                    |                   |
-| Random Forest          |          |                    |                    |                   |                    |                    |                   |
+<p align="center">
+  <img src="PrithviCodes/plots/Classification_results.png">
+</p>
 
 ##### Regression
-| Models           | RMSE | R^2 |
-|------------------|:----:|----:|
-| Ridge Regression |   126001088  |   0.6897457309459162 |
+<p align="center">
+  <img src="PrithviCodes/plots/Regression_results.png">
+</p>
 
-#####  PLOTS & CHARTS
-
-ToDo
 
 
 ------------
