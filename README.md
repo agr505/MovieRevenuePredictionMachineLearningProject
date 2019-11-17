@@ -298,7 +298,7 @@ We have plotted our depicted our SVM classification results for both bin sizes b
 </p> 
 
 <p align="left">
-  <img src="Figures/SVM_100_Norm_ConfusionMat.png" >
+  <img src="Figures/SVM_100_Norm_ConfusionMat2.png" >
 </p> 
 
 Although we have achieved high accuracy and F1-score, we see from the confusion matrix that majority of our test instances are predicted to be in bin 0 or 1. This can be explained by class imbalance in the training data. There are more number of examples which belong to class 0 and 1 as compared to other categories. To overcome this challenge, we explored Random Forest which performs better with class imbalance in training data.
