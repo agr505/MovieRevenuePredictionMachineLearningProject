@@ -286,6 +286,21 @@ What is interesting is that the PCA data with normalization performed worse than
   <img src="PrithviCodes/plots/Line_chart_gamma_f1score.png" >
 </p> 
 
+
+We have plotted our depicted our SVM classification results for both bin sizes below:
+<p align="center">
+  <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
+</p> 
+
+<p align="left">
+  <img src="Figures/SVM_100_Norm_ConfusionMat.png" >
+</p> 
+
+Although we have achieved high accuracy and F1-score, we see from the confusion matrix that majority of our test instances are predicted to be in bin 0 or 1. This can be explained by class imbalance in the training data. There are more number of examples which belong to class 0 and 1 as compared to other categories. To overcome this challenge, we explored Random Forest which performs better with class imbalance in training data.
+
+Another possible avenue to explore for this class imbalance problem with SVM would be to increase the penalty for misclassifying minority classes. This could be done by inversely weighing 'C' with class size. This could be explored in future.
+
+
 ### Random Forest
 <p align="center">
   <img src="Tarushree_RF plots/F1VsDepth_300.png" height="500" width="600">
@@ -312,7 +327,7 @@ What is interesting is that the PCA data with normalization performed worse than
 
 
 # 7. Final Conclusions
- 
+sduqiwo
 
 # 8. Reference
 [1] What makes a successful film? Predicting a film’s revenue and user rating with machine learning. (2019). Retrieved 28 September 2019, from https://towardsdatascience.com/what-makes-a-successful-film-predicting-afilms-revenue-and-user-rating-with-machine-learning-e2d1b42365e7 
