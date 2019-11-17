@@ -1,5 +1,5 @@
 ﻿# Project title: Movie Revenue Prediction
-## Team members: Sanmesh, Aaron, Tarushree, Aastha, Prithvi, George
+## Team members: Sanmesh, Aaron, Tarushree, Aastha, Prithvi
 
 ---
 <p align="center">
@@ -367,6 +367,8 @@ With random forest, we see improved classification as compared to SVM and overal
 
 
 # 8. Reference
-[1] What makes a successful film? Predicting a film’s revenue and user rating with machine learning. (2019). Retrieved 28 September 2019, from https://towardsdatascience.com/what-makes-a-successful-film-predicting-afilms-revenue-and-user-rating-with-machine-learning-e2d1b42365e7 
-[2] h98uesrhmdifvherdsfredsiojfveioadschj 8aerdsh ciofvjerdiosjcf[mxerwjds9gtkvsed
-[3] arkpofaewksporkfweoskrpfksdpokafkewdsofkesdopxrkopfwae,csporkf4	wq[dskxf
+[1] What makes a successful film? Predicting a film’s revenue and user rating with machine learning. (2019). Retrieved 28 September 2019, from https://towardsdatascience.com/what-makes-a-successful-film-predicting-afilms-revenue-and-user-rating-with-machine-learning-e2d1b42365e7
+[2] Dan Cocuzzo, Stephen Wu, "Hit or Flop: Box Office Prediction for Feature Films", Stanford University, 2013.
+[3] Nahid Quader, Md. Osman Gani, Dipankar Chaki, and Md. Haider Ali, “A Machine Learning Approach to Predict Movie Box-Office Success,”in 20th International Conference of Computer and Information Technology (ICCIT), December 2017.
+[4] Mahesh Joshi, Dipanjan Das, Kevin Gimpel, and Noah A. Smith. Movie reviews and revenues: an experiment in text regression. In Human Language Technologies: The 2010 Annual Conference of the North American Chapter of the Association for Computational Linguistics, HLT ’10, 2010.
+[5] W. Zhang, S. Skiena Improving movie gross prediction through news analysis International joint conference on web intelligence and intelligent agent technology, IEEE/WIC/ACM (2009)
