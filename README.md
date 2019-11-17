@@ -191,7 +191,7 @@ To further illustrate the consequence of this, we've shown below the plot for th
 
 ### Linear ridge regression (Sanmesh)
 
-First, we tried to predict the exact revenue of the test set of movies using linear ridge regression. Ridge regression was chosen because it would it would protect against overfitting of the data, especially when there are a huge number of features. 
+First, we tried to predict the exact revenue of the test set of movies using linear ridge regression. Ridge regression was chosen because it would protect against overfitting of the data, especially when there are a huge number of features. 
 Cross validation was performed to find the optimal alpha or regularization value.
 The data sets were the two PCA data sets, and the feature selection dataset mentioned previously. Ridge Regression was trained on 80% of each data set, and then finally tested on the remaining 20% of the data sets.  The results are below.
 
@@ -303,7 +303,7 @@ What is interesting is that the PCA data with normalization performed worse than
 </p> 
 
 
-We have plotted our depicted our SVM classification results for both bin sizes below:
+We have plotted our SVM classification results for both bin sizes as confusion matrices below:
 <p align="center">
   <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
 </p> 
@@ -340,6 +340,8 @@ Another possible avenue to explore for this class imbalance problem with SVM wou
   <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png" height="500" width="600">
 </p>
 
+We have plotted our Random Forest classification results for both bin sizes as confusion matrices below:
+
 <p align="center">
   <img src="Figures/RF_300_Norm_ConfusionMat.png" >
 </p>
@@ -347,8 +349,7 @@ Another possible avenue to explore for this class imbalance problem with SVM wou
   <img src="Figures/RF_100_Norm_ConfusionMat.png" >
 </p>
 
-
-
+With random forest, we see improved classification as compared to SVM and overall accuracy is also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.
 
 # 7. Final Conclusions
 
