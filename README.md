@@ -32,21 +32,15 @@ We aim to find the variables most associated with film revenue, and to see how t
     <td>Budget</td>
     <td>Genres</td>
     <td>Keywords</td>
+    <td>Production Companies</td>
+    <td>Crew</td>
   </tr>
   <tr>
-    <td>Production Companies</td>
     <td>Release Date</td>
     <td>Runtime</td>
-  </tr>
-  <tr>
     <td>Spoken Languages</td>
     <td>Status</td>
     <td>Cast</td>
-  </tr>
-  <tr>
-    <td>Crew</td>
-    <td></td>
-    <td></td>
   </tr>
 </table>
 
