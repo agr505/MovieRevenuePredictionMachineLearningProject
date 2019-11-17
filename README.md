@@ -149,17 +149,28 @@ Once we visualized the graphs we then manually set a threshold and gathered 150 
 
 
 ##### Feature importances of encoded movie data
-######  2000 features sorted by feature importance scores of XGBRegressor
+After data encoding, we have 10,000+ columns/features. We used XGBRegressor to find the relative correlation of these features (feature importances) when compared to the Revenue.      
+We have shown the the plots of the feature importances for the various features sorted by feature importance scores of XGBRegressor.        
+Below we show the first 2000, of the sorted set of features.
 <p align="left">
   <img src="PrithviCodes/plots/xgb_2000.png" >
 </p>
 
+
+
+
+
 ###### 150 to 200 features feature importance scores of XGBRegressor
 
-To determine threshold for cutoff for feature selection
+To determine threshold for cutoff for feature selection: we've plotted close the low feature importance features (150 to 200), As shown below, the feature importance scores are lowest near the 160'th sorted feature. 
+This was used to set the threshold as 0.00020 for the feature importance scores, and therefore 156 features were obtained whose feature contribution was above that.      
+
 <p align="left">
   <img src="PrithviCodes/plots/xgb_150_200.png" >
 </p>
+
+
+To further illustrate the consequence of this, we've shown below the plot for the top 25 features and their feature importance scores. These are the factors, who's presence in the movie correlates to a high box office revenue.     
 
 ##### Top 25 Revenue predictors
 
