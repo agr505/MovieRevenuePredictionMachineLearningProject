@@ -110,7 +110,7 @@ Once we visualized the graphs we then manually set a threshold and gathered 150 
 ##### Feature importances of encoded movie data
 ######  2000 features sorted by feature importance scores of XGBRegressor
 <p align="center">
-  <img src="PrithviCodes/plots/xgb_2000.png" >
+  <img src="PrithviCodes/plots/xgb_2000.png" style="width:75%;">
 </p>
 
 We plotted the feature importances of the features WRT revenue which was obtained through XGBRegressor.
@@ -122,7 +122,7 @@ As shown in the graph out of the 10,000+ features, less than 200 have a meaningf
 To determine threshold for cutoff for feature selection, we plotted the graph for the lowest contributors out of the features (from feature no. 150 to 200). From this we obtained a threshold of 0.0002. All features with scores above this were considered for further predictive analysis.
 
 <p align="center">
-  <img src="PrithviCodes/plots/xgb_150_200.png" >
+  <img src="PrithviCodes/plots/xgb_150_200.png" style="width:75%;">
 </p>
 
 
@@ -131,7 +131,7 @@ To determine threshold for cutoff for feature selection, we plotted the graph fo
 ##### Top 25 Revenue predictors
 
 <p align="center">
-  <img src="PrithviCodes/plots/25_top_XGB.png" >
+  <img src="PrithviCodes/plots/25_top_XGB.png" style="width:80%;">
 </p>
 
 We observed the most important features which have high correlation to the box office revenue of a movie, and have plotted the top 25 of these.
