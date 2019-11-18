@@ -243,11 +243,18 @@ We used Support Vector Machine as a classification model in order to classify th
 
 First we kept Gamma constant at its default value of ‘auto’ for the Sklearn Support Vector Classifier call which uses 1/( n features). We then tuned the C parameter to find the optimal value for C. We then fixed C at its default value for the Sklearn Support Vector Classifier call at 1. We tuned the Gamma parameter to find its optimal value. After we obtained the optimal hyperparameters using 3-Fold Cross Validation, we trained the training set with these chose hyperparameters. We then tested our trained model on the test set. 
 
+#### C, Regularization hyperparameter
+
+C is the regularization hyperparameter. C affects the complexity of the decision rule assigning penalties for the misclassifying of data points. When C is small, the Support Vector Machine classifier is more tolerant of misclassifying data points. The classifier will have high bias, low variance. When C is large, the classifier is very intolerant to the misclassification of data points. It has low bias, high variance.
+
+As seen in our F1-score vs C-hyperparameter plot for classification of data points within a $300 million revenue interval,  the model has a F1 score of 0.8094 when it has a C value of 1. This is thus the optimal value for C from our hyperparameter tuning process. When C is increased higher than 1, the increase in regularization leads to a decrease in model performance.
+
+
 
 <p align="center">
   <img src="PrithviCodes/plots/Line_chart_C_f1score.png" >
 </p>
-C is the regularization parameter. C affects the complexity of the decision rule assigning penalties for the misclassifying of data points. When C is small, the Support Vector Machine classifier is more tolerant of misclassifying data points. The classifier will have high bias, low variance. When C is large, the classifier is very intolerant to the misclassification of data points. It has low bias, high variance. As seen in our F1-score vs C-hyperparameter plot for classification of data points within a $300 million revenue interval,  the model has a F1 score of 0.8094 when it has a C value of 1. This is thus the optimal value for C from our hyperparameter tuning process. When C is increased higher than 1, the increase in regularization leads to a decrease in model performance.
+
 <p align="center">
   <img src="PrithviCodes/plots/Line_chart_gamma_f1score.png" >
 </p> 
