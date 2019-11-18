@@ -269,7 +269,7 @@ Gamma, the kernel coefficient, affects the spread of the kernel and thus affecti
 #### Error Visualization
   
 
-It can be observed in the Actual Revenue vs Predicted Revenue (SVM) scatter plot below that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. Thus we see that the error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict.
+It can be observed in the Actual Revenue vs Predicted Revenue (SVM) scatter plot below that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. Thus we see that the error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict. In both bin sizes, the model has a more difficult time predicting higher revenues than it does predicting lower revenues.
 
 <p align="center">
   <img src="PrithviCodes/Scatter_predVSActual.png" >
@@ -297,7 +297,7 @@ We observed that we get the highest F1 score and accuracy in case of 300 bins. T
 </p>
 
 
-We have plotted our depicted our SVM classification results for both bin sizes below:
+We have plotted our depicted SVM classification results for both bin sizes below:
 <p align="center">
   <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
 </p> 
@@ -370,7 +370,7 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.
 #### Error Visualization
   
 
-It can be noticed in the Actual Revenue vs Predicted Revenue, sorted by Actual Revenue scatter plot below that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. This is a similar trend to what we observed with SVM. The error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict.
+It can be noticed in the Actual Revenue vs Predicted Revenue, sorted by Actual Revenue scatter plot below that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. This is a similar trend to what we observed with SVM. The error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict. In both bin sizes, the model has a more difficult time predicting higher revenues than it does predicting lower revenues.
 
     
 
@@ -393,7 +393,7 @@ It can be noticed in the Actual Revenue vs Predicted Revenue, sorted by Actual R
 #### Visualizing F1 score & Accuracy
     
 
-In the bar graph below, we have plotted the F1 scores and accuracy versus different bin sizes used for categorizing the output label, that is Revenue.
+In the bar graph below, we have plotted the F1 scores and accuracy versus different bin sizes used for categorizing the output label, that is revenue.
 
 We used 3 bin sizes - 50, 100 and 300. For each bin size, we used 3-Fold Cross Validation to choose the best values of number of estimators and maximum depth parameters.
 After finding the best values of the 2 parameters, we generated F1 score and accuracy on the test dataset.
