@@ -266,9 +266,11 @@ Gamma, the kernel coefficient, affects the spread of the kernel and thus affecti
 </p> 
 
 
-<p align="center">
-  <img src="PrithviCodes/BinVSF1SVM_2.png" >
-</p>
+#### Error Visualization
+  
+
+It can be noticed in the Actual Revenue vs Predicted Revenue (SVM) that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. Thus we see that the error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict.
+
 <p align="center">
   <img src="PrithviCodes/Scatter_predVSActual.png" >
 </p>
@@ -276,6 +278,24 @@ Gamma, the kernel coefficient, affects the spread of the kernel and thus affecti
 <p align="center">
   <img src="PrithviCodes/Scatter_predVSActual100.png" >
 </p>
+
+#### Visualizing F1 score & Accuracy
+    
+
+In the bar graph below, we have plotted the F1 scores and accuracy versus different bin sizes used for categorizing the revenue class.
+
+
+We used 3 bin sizes - 50, 100 and 300. For each bin size, we used Cross Validation to choose the best values of gamma and C. After using the best values of the 2 hyperparameters to train our model, we tested our model on the test dataset and generated the F1 scores and accuracy scores.
+
+
+We observed that we get the highest F1 score and accuracy in case of 300 bins. This observation is in accordance to the error visualization graphs presented above that show the least error in case of 300 bins.
+
+
+
+<p align="center">
+  <img src="PrithviCodes/BinVSF1SVM_2.png" >
+</p>
+
 
 We have plotted our depicted our SVM classification results for both bin sizes below:
 <p align="center">
@@ -352,7 +372,7 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.
 
 1. As there are more number of data points in later bins as compared to the initial bins, we see that the error is higher in later bins.    
 
-2. Also, we observed that the error is higher incase of 100 bins as compared to when we have 300 bins. This shows that having more number of classes is leading the model to clearly segregate the data by grouping the data points more efficiently.
+2. Also, we observed that the error is higher in the case of 100 bins as compared to when we have 300 bins. This shows that having more number of classes is leading the model to clearly segregate the data by grouping the data points more efficiently.
 
     
 
@@ -380,7 +400,7 @@ In the bar graph below, we have plotted the F1 scores and accuracy versus differ
 We used 3 bin sizes - 50, 100 and 300. For each bin size, we used Cross Validation to choose the best values of number of estimators and maximum depth parameters.
 After finding the best values of the 2 parameters, we generated F1 score and accuracy on the test dataset.
 
-We observed that we get the highest F1 score and accuracy in case of 300 bins. This observation is in accordance to the error visualization graphs presented above that show the lest error in case lof 300 bins.
+We observed that we get the highest F1 score and accuracy in case of 300 bins. This observation is in accordance to the error visualization graphs presented above that show the lest error in case of 300 bins.
 
 <p align="center">
   <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png" height="500" width="600">
