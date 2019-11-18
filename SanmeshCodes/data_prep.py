@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jul 30 06:46:53 2019
-@author: rian-van-den-ander
-"""
 
 # ---- IMPORTS AND INPUTS -----
 
