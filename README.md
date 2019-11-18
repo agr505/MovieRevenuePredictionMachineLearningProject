@@ -413,7 +413,7 @@ We have plotted our Random Forest classification results for both bin sizes as c
 <p align="center">
   <img src="Figures/RF_100_Norm_ConfusionMat.png" >
 </p>
-With random forest, we see improved classification as compared to SVM and overall accuracy is also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.  
+With random forest, we see improved classification as compared to SVM and the overall accuracy also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.  
 
 
 # 7 Final Conclusions  
@@ -438,7 +438,7 @@ Differences in performance using the XGBRegressor features and the PCA principle
 
 Random Forest with a bin size of $300 million has 0.0037 greater of an F1 score with the principle components from PCA features than it does using the XGBRegressor features. Random Forest with a bin size of $100 million also has 0.0048 greater of an F1 score with the principle components from PCA features than it does using the XGBRegressor features. However, both SVM and Random Forest are affected by the class imbalance problem in the training data.
   
-With random forest, we see improved classification as compared to SVM and overall accuracy is also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.
+With random forest, we see improved classification as compared to SVM and overall accuracy also looks better. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.
 
 <p align="center">
   <img src="PrithviCodes/BinVSF1SVM_2.png" >
