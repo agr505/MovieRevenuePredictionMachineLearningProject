@@ -285,10 +285,10 @@ It can be noticed in the Actual Revenue vs Predicted Revenue (SVM) that there is
 In the bar graph below, we have plotted the F1 scores and accuracy versus different bin sizes used for categorizing the revenue class.
 
 
-We used 3 bin sizes - 50, 100 and 300. For each bin size, we used Cross Validation to choose the best values of gamma and C. After using the best values of the 2 hyperparameters to train our model, we tested our model on the test dataset and generated the F1 scores and accuracy scores.
+We used 3 bin sizes - $50 million, $100 million and $300 million. For each bin size, we used 3-Fold Cross Validation to choose the best values of gamma and C. After using the best values of the 2 hyperparameters to train our model, we tested our model on the test dataset and generated the F1 scores and accuracy scores.
 
 
-We observed that we get the highest F1 score and accuracy in case of 300 bins. This observation is in accordance to the error visualization graphs presented above that show the least error in case of 300 bins.
+We observed that we get the highest F1 score and accuracy in case of 300 bins. This observation is in accordance with the error visualization graphs presented above that show the least error in case of 300 bins.
 
 
 
@@ -397,7 +397,7 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.
 
 In the bar graph below, we have plotted the F1 scores and accuracy versus different bin sizes used for categorizing the output label, that is Revenue.
 
-We used 3 bin sizes - 50, 100 and 300. For each bin size, we used Cross Validation to choose the best values of number of estimators and maximum depth parameters.
+We used 3 bin sizes - 50, 100 and 300. For each bin size, we used 3-Fold Cross Validation to choose the best values of number of estimators and maximum depth parameters.
 After finding the best values of the 2 parameters, we generated F1 score and accuracy on the test dataset.
 
 We observed that we get the highest F1 score and accuracy in case of 300 bins. This observation is in accordance to the error visualization graphs presented above that show the lest error in case of 300 bins.
