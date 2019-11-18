@@ -468,6 +468,12 @@ With random forest, we see improved classification as compared to SVM and overal
 <li>Feature Selection - Prithvi</li>
 <li>PCA -  Sanmesh</li>
 <li>Ridge Regression- Aastha, Sanmesh</li>
-<li>SVM - Aaron, Tarushree, Aastha, Prithvi, Sanmesh</li>
+<li>SVM
+  <ul>
+    <li>Code: Aaron, Tarushree, Sanmesh</li>
+    <li>Visualization: Prithvi, Aastha</li>
+  </ul>
+</li>
+
 <li>Random Forest - Aaron, Tarushree, Aastha, Sanmesh</li>
 </ol>
