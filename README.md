@@ -438,7 +438,7 @@ Differences in performance using the XGBRegressor features and the PCA principle
 
 Random Forest with a bin size of $300 million has 0.0037 greater of an F1 score with the principle components from PCA features than it does using the XGBRegressor features. Random Forest with a bin size of $100 million also has 0.0048 greater of an F1 score with the principle components from PCA features than it does using the XGBRegressor features. However, both SVM and Random Forest are affected by the class imbalance problem in the training data.
   
-With random forest, we see improved classification as compared to SVM and overall accuracy also looks better. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.
+As can be observed in the bar plots below, with Random Forest, we see improved classification when compared to SVM. Using the XGBRegressor features and with a $300 million bin size, Random Forest has a 0.004 higher F1 score. Using the XGBRegressor features and with a $100 million bin size, Random Forest has a 0.0359 higher F1 score. Random Forest also has higher accuracy values as well. This is because Random Forest performs better with class imbalance in the dataset than SVM does.
 
 <p align="center">
   <img src="PrithviCodes/BinVSF1SVM_2.png" >
