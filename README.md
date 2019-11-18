@@ -269,7 +269,7 @@ Gamma, the kernel coefficient, affects the spread of the kernel and thus affecti
 #### Error Visualization
   
 
-It can be observed in the Actual Revenue vs Predicted Revenue (SVM) scatter plot below that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. Thus we see that the error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict.
+It can be observed in the Actual Revenue vs Predicted Revenue (SVM) scatter plot below that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. Thus we see that the error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict. In both bin sizes, the model has a more difficult time predicting higher revenues than it does predicting lower revenues.
 
 <p align="center">
   <img src="PrithviCodes/Scatter_predVSActual.png" >
@@ -297,7 +297,7 @@ We observed that we get the highest F1 score and accuracy in case of 300 bins. T
 </p>
 
 
-We have plotted our depicted our SVM classification results for both bin sizes below:
+We have plotted our depicted SVM classification results for both bin sizes below:
 <p align="center">
   <img src="Figures/SVM_300_Norm_ConfusionMat.png" >
 </p> 
@@ -370,7 +370,7 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.
 #### Error Visualization
   
 
-It can be noticed in the Actual Revenue vs Predicted Revenue, sorted by Actual Revenue scatter plot below that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. This is a similar trend to what we observed with SVM. The error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict.
+It can be noticed in the Actual Revenue vs Predicted Revenue, sorted by Actual Revenue scatter plot below that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. This is a similar trend to what we observed with SVM. The error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict. In both bin sizes, the model has a more difficult time predicting higher revenues than it does predicting lower revenues.
 
     
 
@@ -393,7 +393,7 @@ It can be noticed in the Actual Revenue vs Predicted Revenue, sorted by Actual R
 #### Visualizing F1 score & Accuracy
     
 
-In the bar graph below, we have plotted the F1 scores and accuracy versus different bin sizes used for categorizing the output label, that is Revenue.
+In the bar graph below, we have plotted the F1 scores and accuracy versus different bin sizes used for categorizing the output label, that is revenue.
 
 We used 3 bin sizes - 50, 100 and 300. For each bin size, we used 3-Fold Cross Validation to choose the best values of number of estimators and maximum depth parameters.
 After finding the best values of the 2 parameters, we generated F1 score and accuracy on the test dataset.
@@ -413,7 +413,7 @@ We have plotted our Random Forest classification results for both bin sizes as c
 <p align="center">
   <img src="Figures/RF_100_Norm_ConfusionMat.png" >
 </p>
-With random forest, we see improved classification as compared to SVM and overall accuracy is also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.  
+With random forest, we see improved classification as compared to SVM and the overall accuracy also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.  
 
 
 # 7 Final Conclusions  
@@ -430,7 +430,7 @@ With random forest, we see improved classification as compared to SVM and overal
   <img src="PrithviCodes/plots/Regression_results.png">
 </p>
 
-Overall, for dataset dimension reduction, feature selection worked the best across all the supervised learning algorithms.  Ridge regression showed promising results in predicting the revenue, with a R^2 value of 0.69, which is within the range of 0.6 to 0.9, indicating a good model according to [1]. For our classfication models SVM and Random forest two bin sizes (100 million and 300 million) were experimented with and we achieve higher accuracy with the bigger - 300 bin size. 
+Overall, for dataset dimension reduction, feature selection worked the best across all the supervised learning algorithms.  Ridge regression showed promising results in predicting the revenue, with a R^2 value of 0.69, which is within the range of 0.6 to 0.9, indicating a good model according to [1]. For our classfication models SVM and Random forest, three bin sizes (50 million, 100 million, and 300 million) were experimented with and we achieve higher accuracy with the bigger - 300 bin size. 
 
 
 Differences in performance using the XGBRegressor features and the PCA principle components can be observed in the table. SVM with a bin size of $300 million has 0.0447 greater of an F1 score with the XGBRegressor features than it does using the principle components from PCA. However SVM with a bin size of $100 million has 0.0032 greater of an F1 score with the principle components from PCA than it does using the XGBRegressor features. 
@@ -438,6 +438,18 @@ Differences in performance using the XGBRegressor features and the PCA principle
 
 Random Forest with a bin size of $300 million has 0.0037 greater of an F1 score with the principle components from PCA features than it does using the XGBRegressor features. Random Forest with a bin size of $100 million also has 0.0048 greater of an F1 score with the principle components from PCA features than it does using the XGBRegressor features. However, both SVM and Random Forest are affected by the class imbalance problem in the training data.
   
+With random forest, we see improved classification as compared to SVM and overall accuracy also looks better. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.
+
+<p align="center">
+  <img src="PrithviCodes/BinVSF1SVM_2.png" >
+</p>
+
+<p align="center">
+  <img src="Tarushree_RF plots/BinSize_vs_F1_barplot.png" height="500" width="600">
+</p>
+
+
+
 # 8. Reference
 <ol>
 <li>What makes a successful film? Predicting a film’s revenue and user rating with machine learning. (2019). Retrieved 28 September 2019, from https://towardsdatascience.com/what-makes-a-successful-film-predicting-afilms-revenue-and-user-rating-with-machine-learning-e2d1b42365e7</li>
