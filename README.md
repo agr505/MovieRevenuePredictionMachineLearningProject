@@ -430,7 +430,7 @@ With random forest, we see improved classification as compared to SVM and overal
   <img src="PrithviCodes/plots/Regression_results.png">
 </p>
 
-Overall, for dataset dimension reduction, feature selection worked the best across all the supervised learning algorithms.  Ridge regression showed promising results in predicting the revenue, with a R^2 value of 0.69, which is within the range of 0.6 to 0.9, indicating a good model according to [1]. For our classfication models SVM and Random forest two bin sizes (100 million and 300 million) were experimented with and we achieve higher accuracy with the bigger - 300 bin size. 
+Overall, for dataset dimension reduction, feature selection worked the best across all the supervised learning algorithms.  Ridge regression showed promising results in predicting the revenue, with a R^2 value of 0.69, which is within the range of 0.6 to 0.9, indicating a good model according to [1]. For our classfication models SVM and Random forest, three bin sizes (50 million, 100 million, and 300 million) were experimented with and we achieve higher accuracy with the bigger - 300 bin size. 
 
 
 Differences in performance using the XGBRegressor features and the PCA principle components can be observed in the table. SVM with a bin size of $300 million has 0.0447 greater of an F1 score with the XGBRegressor features than it does using the principle components from PCA. However SVM with a bin size of $100 million has 0.0032 greater of an F1 score with the principle components from PCA than it does using the XGBRegressor features. 
