@@ -269,7 +269,7 @@ Gamma, the kernel coefficient, affects the spread of the kernel and thus affecti
 #### Error Visualization
   
 
-It can be noticed in the Actual Revenue vs Predicted Revenue (SVM) that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. Thus we see that the error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict.
+It can be observed in the Actual Revenue vs Predicted Revenue (SVM) scatter plot below that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. Thus we see that the error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict.
 
 <p align="center">
   <img src="PrithviCodes/Scatter_predVSActual.png" >
@@ -370,9 +370,7 @@ Below are the graphs for 2 different Bin sizes - 100 and 300.
 #### Error Visualization
   
 
-1. As there are more number of data points in later bins as compared to the initial bins, we see that the error is higher in later bins.    
-
-2. Also, we observed that the error is higher in the case of 100 bins as compared to when we have 300 bins. This shows that having more number of classes is leading the model to clearly segregate the data by grouping the data points more efficiently.
+It can be noticed in the Actual Revenue vs Predicted Revenue, sorted by Actual Revenue scatter plot below that there is a larger number of data points in the bins with bin size $300 million as compared to the bins with bin size $100 million. This is a similar trend to what we observed with SVM. The error is higher in the bins with bin size $100 million since the classification problem becomes harder as we increase the number of classes needed to correctly predict.
 
     
 
