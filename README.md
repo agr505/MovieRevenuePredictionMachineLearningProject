@@ -474,6 +474,10 @@ With random forest, we see improved classification as compared to SVM and overal
     <li>Visualization: Prithvi, Aastha</li>
   </ul>
 </li>
-
-<li>Random Forest - Aaron, Tarushree, Aastha, Sanmesh</li>
+<li>Random Forest
+  <ul>
+    <li>Code: Aaron, Tarushree, Sanmesh</li>
+    <li>Visualization: Tarushree, Aastha</li>
+  </ul>
+</li>
 </ol>
