@@ -240,7 +240,7 @@ The significance of turning the revenue problem into a classification problem is
 ### SVM
 We used Support Vector Machine as a classification model in order to classify the movie data into the correct revenue category. The data is not linearly separable. We were able to get the best performance with the Radial Basis Function kernel. We have experimented with different hyperparameters including gamma, the kernel coefficient, and C the regularization parameter. We found the optimal values for the hyperparameters by using 3-Fold Cross Validation with F1 score as the metric. We used a specific F1 score variation that first calculated the metrics for each class and then found their average weighted by the number of true instances for each class. We needed to use this because of our class imbalance. 
 
-First we kept Gamma constant at its default value of ‘auto’ for the Sklearn Support Vector Classifier call which uses 1/( n features). We then tuned the C parameter to find the optimal value for C. We then fixed C at its default value for the Sklearn Support Vector Classifier call at 1. We tuned the Gamma parameter to find its optimal value. After we obtained the optimal hyperparameters using 3-Fold Cross Validation, we trained the training set with these chose hyperparameters. We then tested our trained model on the test set. 
+First we kept Gamma constant at its default value of ‘auto’ for the Sklearn Support Vector Classifier call which uses 1/( n features). We then tuned the C parameter to find the optimal value for C. We then fixed C at its default value for the Sklearn Support Vector Classifier call at 1. We tuned the Gamma parameter to find its optimal value. After we obtained the optimal hyperparameters using 3-Fold Cross Validation, we trained the training set with these chose hyperparameters. We then tested our trained model on the test set. All of the plots in this Support Vector Machine section were generated while using the XGBRegressor features. 
 
 #### C, Regularization Hyperparameter
 
@@ -313,7 +313,7 @@ Another possible avenue to explore for this class imbalance problem with SVM wou
 #### Random Forest
 
 <p> We used Random Forest as another classification model in order to classify the movie data into the correct revenue category. We have experimented with different hyperparameters including the number of estimators and the maximum depth of each tree. We found the optimal values for the hyperparameters by using 3-Fold Cross Validation with F1 score as the metric. We used a specific F1 score variation that first calculated the metrics for each class and then found their average weighted by the number of true instances for each class. We needed to use this because of our class imbalance. The criteria used to measure the quality of each split is the Gini Impurity index.</p>
-<p> First we kept the number of estimators fixed at its default value of 10 for the Sklearn Random Forest  Classifier call. We then tuned the Max Depth hyperparameter to find the optimal value for Max Depth. We then fixed Max Depth at its default value of “None” for the Sklearn Support Vector Classifier call. We tuned the number of estimators hyperparameter to find its optimal value. After we obtained the optimal hyperparameters using 3-Fold Cross Validation, we trained the model using the training set with these chosen hyperparameters. We then tested our trained model on the test set. </p>
+<p> First we kept the number of estimators fixed at its default value of 10 for the Sklearn Random Forest  Classifier call. We then tuned the Max Depth hyperparameter to find the optimal value for Max Depth. We then fixed Max Depth at its default value of “None” for the Sklearn Support Vector Classifier call. We tuned the number of estimators hyperparameter to find its optimal value. After we obtained the optimal hyperparameters using 3-Fold Cross Validation, we trained the model using the training set with these chosen hyperparameters. We then tested our trained model on the test set. All of the plots in this Random Forest section were generated while using the XGBRegressor features.</p>
   
 
 #### Number of Estimators
@@ -415,7 +415,7 @@ We have plotted our Random Forest classification results for both bin sizes as c
 With random forest, we see improved classification as compared to SVM and the overall accuracy also looks good. However, accuracy for each class other than the first class, is not so good. This can be explained by class imbalance in the training data.  
 
 
-# 7 Final Conclusions  
+# 7 Final Conclusion  
 
 ##### TABLES
 
